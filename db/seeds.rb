@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+50.times do
+  gimei = Gimei.new
+  
+  User.create(
+    last_name: gimei.name.kanji,
+    first_name: gimei.name.kanji,
+    last_name_kana: gimei.name.katakana,
+    first_name_kana: gimei.name.katakana
+  )
+end
