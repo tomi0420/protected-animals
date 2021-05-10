@@ -1,0 +1,153 @@
+.title {
+  font-size: 25px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.form1 {
+  margin: 120px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.new_user {
+  width: 600px;
+  padding: 30px;
+  border: solid 1px #eeeeee;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.new_user_address {
+  width: 600px;
+  padding: 30px;
+  border: solid 1px #eeeeee;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.form-text-wrap {
+  padding: 14px 16px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.indispensable {
+  padding: 0 20px;
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  background-color: #daa965;
+  color: #fff;
+  font-size: 14px;
+}
+
+.info {
+  text-align: center;
+}
+
+input[type="email"]{
+  background-color: #eeeeee;
+  height: 40px;
+  width: 200px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[type="password"]{
+  background-color: #eeeeee;
+  height: 40px;
+  width: 200px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[type="text"]{
+  background-color: #eeeeee;
+  height: 40px;
+  width: 98px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user[nickname]"]{
+  background-color: #eeeeee;
+  height: 40px;
+  width: 200px;
+  border-radius: 6px;
+  border: none;
+}
+
+.actions {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="submit"]{
+  background-color: #daa965;
+  height: 40px;
+  width: 125px;
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+}
+
+.select-box {
+  height: 30px;
+  width: 100px;
+  background-color: #eeeeee;
+  padding-left: 20px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[postal_code]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[city]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[address]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[building]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[phone_number]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}

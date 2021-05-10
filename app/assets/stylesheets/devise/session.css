@@ -1,0 +1,28 @@
+.form-header-text {
+  text-align: center;
+}
+
+.registration-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.form-wrap {
+  width: 600px;
+  border: solid 1px #eeeeee;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 30px 20px 50px;
+}
+
+.form-group {
+  margin: 40px 20px;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
