@@ -10,7 +10,21 @@
   justify-content: center;
 }
 
+.form1 {
+  margin: 120px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
 .new_user {
+  width: 600px;
+  padding: 30px;
+  border: solid 1px #eeeeee;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.new_user_address {
   width: 600px;
   padding: 30px;
   border: solid 1px #eeeeee;
@@ -39,7 +53,7 @@
 }
 
 .info {
-  text-align: left;
+  text-align: center;
 }
 
 input[type="email"]{
@@ -86,5 +100,54 @@ input[type="submit"]{
   width: 125px;
   border-radius: 6px;
   color: #fff;
+  border: none;
+}
+
+.select-box {
+  height: 30px;
+  width: 100px;
+  background-color: #eeeeee;
+  padding-left: 20px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[postal_code]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[city]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[address]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[building]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[name="user_address[phone_number]"] {
+  background-color: #eeeeee;
+  height: 40px;
+  width: 150px;
+  border-radius: 6px;
   border: none;
 }
