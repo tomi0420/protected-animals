@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.form-header {
+  margin-bottom: 60px;
+}
+
 .registration-main {
   display: flex;
   justify-content: center;
@@ -10,7 +14,7 @@
 }
 
 .form-wrap {
-  width: 600px;
+  width: 550px;
   border: solid 1px #eeeeee;
   border-radius: 10px;
   background-color: #fff;
@@ -18,10 +22,19 @@
 }
 
 .form-group {
-  margin: 40px 20px;
+  margin: 20px 20px;
 }
 
 .login-btn {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration {
+  padding-top: 60px;
+  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
