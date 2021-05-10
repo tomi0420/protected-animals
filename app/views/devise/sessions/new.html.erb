@@ -35,6 +35,13 @@
     <div class='login-btn'>
       <%= f.submit "ログイン" ,class:"login-red-btn" %>
     </div>
+
+    <div class="registration">
+      <%= "登録がお済みでない方は" %>
+      <%= link_to "こちら", new_user_registration_path, class: :registration_link %>
+      <%= "から" %>
+    </div >
+
   </div>
 
 <% end %>
