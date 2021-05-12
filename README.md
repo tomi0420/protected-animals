@@ -106,7 +106,8 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | animal_category_id | integer    | null: false                    |
-| animal_type_id     | integer    | null: false                    |
+| kind               | string     | null: false                    |
+| size_id            | integer    | null: false                    |
 | sex_id             | integer    | null: false                    |
 | prefecture_id      | integer    | null: false                    |
 
