@@ -1,6 +1,6 @@
 <header class="header">
   <div class="header__bar row">
-    <h1 class="grid-6"><a href="/">ProtectedAnimals</a></h1>
+    <h1 class="grid-6"><a href="/">タイトル</a></h1>
     <%# <img src="assets/images/animal_01.png" alt="トップ画面" class="top-image">
     <img src="assets/images/animal_02.png" alt="トップ画面" class="top-image"> %>
     <% if user_signed_in? %> 
@@ -13,7 +13,7 @@
           </li>
         </ul> 
       </span> 
-          <%= link_to "投稿する" %> 
+          <%= link_to "投稿する", new_animal_path %> 
       </div> 
       <% else %> 
       <div class="grid-7">
