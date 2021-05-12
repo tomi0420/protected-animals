@@ -1,0 +1,54 @@
+<h2>新規投稿</h2>
+
+<%= form_with model: @new_animal, url: animals_path, local: true do |f| %>
+  <%# <%= render "devise/shared/error_messages", resource: @animal %> 
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </div>
+
+    <div class="field">
+    <%= f.label :birth_date %><br />
+    <%= f.text_field :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :info %><br />
+    <%= f.text_field :info %>
+  </div>
+
+    <div class="field">
+    <%= f.label :personality %><br />
+    <%= f.text_field :personality %>
+  </div>
+
+  <div class="field">
+    <%= f.label :animal_category_id %><br />
+    <%= f.text_field :animal_category_id %>
+  </div>
+
+    <div class="field">
+    <%= f.label :animal_type_id %><br />
+    <%= f.text_field :animal_type_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex_id %><br />
+    <%= f.text_field :sex_id %>
+  </div>
+
+    <div class="field">
+    <%= f.label :prefecture_id %><br />
+    <%= f.text_field :prefecture_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "投稿する" %>
+  </div>
+<% end %>
