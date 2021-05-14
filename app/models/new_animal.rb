@@ -18,10 +18,10 @@ class NewAnimal
 
   def save
    animal = Animal.create( name: name, age: age, birth_date: birth_date, info: info, personality: personality, animal_category_id: animal_category_id, size_id: size_id, sex_id: sex_id, prefecture_id: prefecture_id )
-  #  tag = Tag.where( kind_name: kind_name ).first_or_initialize
-  #  tag.save
+   tag = Tag.where( kind_name: kind_name ).first_or_initialize
+   tag.save
 
-  #  AnimalTag.create( animal_id: animal.id, tag_id: tag.id )
+   AnimalTag.create( animal_id: animal.id, tag_id: tag.id )
   end
 
 end
