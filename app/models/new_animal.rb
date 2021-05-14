@@ -1,9 +1,10 @@
 class NewAnimal
   include ActiveModel::Model
   include ActiveRecord::AttributeAssignment
-  attr_accessor :name, :age, :birth_date, :info, :personality, :animal_category_id, :size_id, :kind_name, :sex_id, :prefecture_id
+  attr_accessor :image, :name, :age, :birth_date, :info, :personality, :animal_category_id, :size_id, :kind_name, :sex_id, :prefecture_id
 
   with_options presence: true do
+    validates :image
     validates :name
     validates :animal_category_id
     validates :kind_name
@@ -17,7 +18,7 @@ class NewAnimal
   end
 
   def save
-   animal = Animal.create( name: name, age: age, birth_date: birth_date, info: info, personality: personality, animal_category_id: animal_category_id, size_id: size_id, sex_id: sex_id, prefecture_id: prefecture_id )
+   animal = Animal.create( image: image, name: name, age: age, birth_date: birth_date, info: info, personality: personality, animal_category_id: animal_category_id, size_id: size_id, sex_id: sex_id, prefecture_id: prefecture_id )
    tag = Tag.where( kind_name: kind_name ).first_or_initialize
    tag.save
 
