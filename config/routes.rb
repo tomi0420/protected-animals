@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     post 'user/addresses', to: 'users/registrations#create_user_address'
   end
   root to: 'animals#index'
-  
+  resources :animals, except: :destroy
 end
