@@ -87,7 +87,11 @@
 | age                | integer    | null: false                    |
 | birth_date         | integer    | null: false                    |
 | info               | text       | null: false                    |
+| animal_category_id | integer    | null: false                    |
 | personality        | text       | null: false                    |
+| size_id            | integer    | null: false                    |
+| sex_id             | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
 | conversation_group | references | null: false, foreign_key: true |
 
 ### Association
@@ -103,13 +107,9 @@
 
 ## tags テーブル
 
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| animal_category_id | integer    | null: false                    |
-| kind               | string     | null: false                    |
-| size_id            | integer    | null: false                    |
-| sex_id             | integer    | null: false                    |
-| prefecture_id      | integer    | null: false                    |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| kind_name | string     | null: false                    |
 
 ### Association
 
