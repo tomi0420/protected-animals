@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2021_05_14_021034) do
     t.string "name", null: false
     t.integer "age", null: false
     t.date "birth_date", null: false
-    t.text "info", null: false
     t.text "personality", null: false
     t.integer "animal_category_id", null: false
     t.integer "size_id", null: false
