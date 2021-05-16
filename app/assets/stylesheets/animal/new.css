@@ -1,0 +1,91 @@
+.new-title {
+  font-size: 25px;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.must {
+  padding: 0 20px;
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #99cc66;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-text-image {
+  padding: 14px 16px;
+  flex-wrap: wrap;
+  margin: 30px 250px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-text-post {
+  padding: 14px 16px;
+  flex-wrap: wrap;
+  margin: 30px 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-image {
+  margin: 0 375px;
+  overflow: scroll;
+  background-color: #eeeeee;
+  display: flex;
+  border: dashed black;
+}
+
+img {
+  width: 150px;
+  height: 200px;
+  margin: 8px;
+}
+
+#image-list {
+  display: flex;
+  height: 220px;
+  flex-wrap: wrap;
+}
+
+.image-element {
+  display: block;
+}
+
+.file-field {
+  margin-right: 100px;
+  text-align: right;
+}
+
+input[name="new_animal[name]"],
+input[name="new_animal[kind_name]"],
+input[name="new_animal[age]"],
+input[name="new_animal[personality]"],
+input[name="new_animal[name]"]
+{
+  background-color: #eeeeee;
+  height: 40px;
+  width: 200px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+
+
+.post-actions {
+  background-color: #99cc66;
+  height: 40px;
+  width: 125px;
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+}

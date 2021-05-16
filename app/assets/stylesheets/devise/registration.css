@@ -72,7 +72,11 @@ input[type="password"]{
   border: none;
 }
 
-input[type="text"]{
+input[name="user[last_name]"],
+input[name="user[first_name]"],
+input[name="user[last_name_kana]"],
+input[name="user[first_name_kana]"]
+{
   background-color: #eeeeee;
   height: 40px;
   width: 98px;
