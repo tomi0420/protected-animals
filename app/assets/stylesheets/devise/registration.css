@@ -72,7 +72,11 @@ input[type="password"]{
   border: none;
 }
 
-input[type="text"]{
+input[name="user[last_name]"],
+input[name="user[first_name]"],
+input[name="user[last_name_kana]"],
+input[name="user[first_name_kana]"]
+{
   background-color: #eeeeee;
   height: 40px;
   width: 98px;
@@ -94,7 +98,10 @@ input[name="user[nickname]"]{
   justify-content: center;
 }
 
-input[type="submit"]{
+input[class="next"],
+input[class="registration"],
+input[class="login-red-btn"]
+{
   background-color: #daa965;
   height: 40px;
   width: 125px;

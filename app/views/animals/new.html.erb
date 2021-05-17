@@ -1,104 +1,100 @@
-<h2>新規投稿</h2>
+<div class="new-title">
+  <h2>新規投稿</h2>
+</div>
 
 <%= form_with model: @new_animal, url: animals_path, local: true do |f| %>
   <%# <%= render "devise/shared/error_messages", resource: @new_animal %> 
 
-
-  <div class='form-text-wrap'>
-    <div class="info">
-      <span class="indispensable">必須</span>画像
+  <div class='form-text-image'>
+    <div class="info-image">
+      <span class="must">必須</span>画像
     </div>
-    <div class="field">
-      <%= f.file_field :image %>
+    <div class="file-field">
+      <label for="new_animal_image">
+        <%= f.file_field :images, name: 'new_animal[images][]', id: 'new_animal_image', multiple: true %>
+      </label>
     </div>
   </div>
+  <div class="preview-image">
+    <div id="image-list"></div>
+  </div>
 
-
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>名前
+      <span class="must">必須</span>名前
     </div>
     <div class="field">
       <%= f.text_field :name %>
     </div>
   </div>
 
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>カテゴリー
+      <span class="must">必須</span>カテゴリー
     </div>
     <div class="field">
-      <%= f.collection_radio_buttons(:animal_category_id, AnimalCategory.all, :id, :name, {}, {class:"select-box", id:"animal-category"}) %>
+      <%= f.collection_radio_buttons(:animal_category_id, AnimalCategory.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
   </div>
 
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>
-      <span class="indispensable">タグ</span>犬種・猫種
+      <span class="must">必須</span>犬種・猫種
+      <%# <span class="must">タグ</span>犬種・猫種 %>
     </div>
     <div class="field">
       <%= f.text_field :kind_name %>
     </div>
   </div>
 
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>大きさ
+      <span class="must">必須</span>大きさ
     </div>
     <div class="field">
-      <%= f.collection_radio_buttons(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"animal-size"}) %>
+      <%= f.collection_radio_buttons(:size_id, Size.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
   </div>
 
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>性別
+      <span class="must">必須</span>性別
     </div>
     <div class="field">
-      <%= f.collection_radio_buttons(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"animal-sex"}) %>
+      <%= f.collection_radio_buttons(:sex_id, Sex.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
   </div>
 
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>年齢
+      <span class="must">必須</span>年齢
     </div>
     <div class="field">
       <%= f.text_field :age %>
     </div>
   </div>
 
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>誕生日
+      <span class="must">必須</span>誕生日
     </div>
     <div class="field">
       <%= f.date_select :birth_date %>
     </div>
   </div>
 
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>
-    </div>
-    <div class="field">
-      <%= f.text_field :info %>
-    </div>
-  </div>
-
-  <div class='form-text-wrap'>
-    <div class="info">
-      <span class="indispensable">必須</span>性格
+      <span class="must">必須</span>性格・特徴
     </div>
       <div class="field">
-      <%= f.text_field :personality %>
+      <%= f.text_area :personality %>
     </div>
   </div>
 
-  <div class='form-text-wrap'>
+  <div class='form-text-post'>
     <div class="info">
-      <span class="indispensable">必須</span>都道府県
+      <span class="must">必須</span>エリア
     </div>
     <div class="field">
       <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"animal-prefecture"}) %>
@@ -106,9 +102,11 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "投稿する" %>
+    <%= f.submit "投稿する", class: 'post-actions' %>
   </div>
 
 <% end %>
 
-<%= link_to "TOPページへ戻る" , root_path %>
+<div class="visit_root_path">
+  <%= link_to "TOPページへ戻る" , root_path %>
+</div>
