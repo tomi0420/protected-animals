@@ -14,14 +14,15 @@ document.addEventListener('DOMContentLoaded', function(){
       inputHTML.setAttribute('id', `new_animal_image_${imageElementNum}`)
       inputHTML.setAttribute('name', 'new_animal[images][]')
       inputHTML.setAttribute('type', 'file')
-      inputHTML.setAttribute('type', 'hidden')
+
+      const NewAnimalImage = document.getElementById('new_animal_image')
 
       imageElement.appendChild(blobImage);
-      imageElement.appendChild(inputHTML)
+      NewAnimalImage.appendChild(inputHTML)
       ImageList.appendChild(imageElement);
 
       inputHTML.addEventListener('change', (e) => {
-        file = e.target.files[0];
+        file = e.target.files[0];zz
         blob = window.URL.createObjectURL(file);
 
         createImageHTML(blob)

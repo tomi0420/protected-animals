@@ -6,17 +6,17 @@
   <%# <%= render "devise/shared/error_messages", resource: @new_animal %> 
 
   <div class='form-text-image'>
-    <div class="info">
+    <div class="info-image">
       <span class="must">必須</span>画像
     </div>
+    <div class="file-field">
+      <label for="new_animal_image">
+        <%= f.file_field :images, name: 'new_animal[images][]', id: 'new_animal_image', multiple: true %>
+      </label>
+    </div>
   </div>
-
   <div class="preview-image">
     <div id="image-list"></div>
-  </div>
-
-  <div class="file-field">
-    <%= f.file_field :images, name: 'new_animal[images][]', id: 'new_animal_image', multiple: true %>
   </div>
 
   <div class='form-text-post'>
@@ -33,14 +33,14 @@
       <span class="must">必須</span>カテゴリー
     </div>
     <div class="field">
-      <%= f.collection_radio_buttons(:animal_category_id, AnimalCategory.all, :id, :name, {}, {class:"select-box", id:"animal-category"}) %>
+      <%= f.collection_radio_buttons(:animal_category_id, AnimalCategory.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
   </div>
 
   <div class='form-text-post'>
     <div class="info">
-      <span class="must">必須</span>
-      <span class="must">タグ</span>犬種・猫種
+      <span class="must">必須</span>犬種・猫種
+      <%# <span class="must">タグ</span>犬種・猫種 %>
     </div>
     <div class="field">
       <%= f.text_field :kind_name %>
@@ -52,7 +52,7 @@
       <span class="must">必須</span>大きさ
     </div>
     <div class="field">
-      <%= f.collection_radio_buttons(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"animal-size"}) %>
+      <%= f.collection_radio_buttons(:size_id, Size.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
   </div>
 
@@ -61,7 +61,7 @@
       <span class="must">必須</span>性別
     </div>
     <div class="field">
-      <%= f.collection_radio_buttons(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"animal-sex"}) %>
+      <%= f.collection_radio_buttons(:sex_id, Sex.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
   </div>
 
@@ -85,10 +85,10 @@
 
   <div class='form-text-post'>
     <div class="info">
-      <span class="must">必須</span>性格
+      <span class="must">必須</span>性格・特徴
     </div>
       <div class="field">
-      <%= f.text_field :personality %>
+      <%= f.text_area :personality %>
     </div>
   </div>
 
@@ -107,4 +107,6 @@
 
 <% end %>
 
-<%= link_to "TOPページへ戻る" , root_path %>
+<div class="visit_root_path">
+  <%= link_to "TOPページへ戻る" , root_path %>
+</div>

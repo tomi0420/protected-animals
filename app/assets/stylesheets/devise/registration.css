@@ -98,7 +98,10 @@ input[name="user[nickname]"]{
   justify-content: center;
 }
 
-input[type="submit"]{
+input[class="next"],
+input[class="registration"],
+input[class="login-red-btn"]
+{
   background-color: #daa965;
   height: 40px;
   width: 125px;
