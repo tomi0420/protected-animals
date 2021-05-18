@@ -8,6 +8,7 @@ class AnimalsController < ApplicationController
     @new_animal = NewAnimal.new(new_animal_params)
     if @new_animal.valid?
        @new_animal.save
+       redirect_to root_path
     else
        render :new
     end
