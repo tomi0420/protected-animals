@@ -1,7 +1,8 @@
 class AnimalsController < ApplicationController
+  before_action :set_animal, only: :show
 
   def index
-    @animals = Animal.all                   #保護団体を登録後、N＋１問題を解消
+    @animals = Animal.order('created_at DESC')                   #保護団体を登録後、N＋１問題を解消
   end
 
   def new
@@ -18,10 +19,18 @@ class AnimalsController < ApplicationController
     end
   end
 
+  def show
+    binding.pry
+  end
+
   private
 
   def new_animal_params
     params.require(:new_animal).permit( :name, :animal_category_id, :kind_name, :size_id, :sex_id, :age, :birth_date, :personality, :prefecture_id, images: [] )
+  end
+
+  def set_animal
+    @animal = Animal.find(params[:id])
   end
 
 end
