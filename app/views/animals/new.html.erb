@@ -5,18 +5,22 @@
 <%= form_with model: @new_animal, url: animals_path, local: true do |f| %>
   <%# <%= render "devise/shared/error_messages", resource: @new_animal %> 
 
-  <div class='form-text-image'>
-    <div class="info-image">
-      <span class="must">必須</span>画像
+  <div class="image-form">
+    <div class='form-text-image'>
+      <div class="info-image">
+        <span class="must">必須</span>画像
+      </div>
+      <div class="file-field">
+        <div class="upload-file">
+          <label for="new_animal_image">
+            <%= f.file_field :images, name: 'new_animal[images][]', id: 'new_animal_image' %>
+          </label>
+        </div>
+      </div>
     </div>
-    <div class="file-field">
-      <label for="new_animal_image">
-        <%= f.file_field :images, name: 'new_animal[images][]', id: 'new_animal_image' %>
-      </label>
+    <div class="preview-image">
+      <div id="image-list"></div>
     </div>
-  </div>
-  <div class="preview-image">
-    <div id="image-list"></div>
   </div>
 
   <div class='form-text-post'>

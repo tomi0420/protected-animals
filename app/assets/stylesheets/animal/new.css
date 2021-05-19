@@ -4,17 +4,18 @@
   text-align: center;
 }
 
+.image-form {
+  display: flex;
+}
 
 .must-image {
   margin-bottom: 20px;
 }
 
 .must {
-  padding: 0 20px;
+  padding: 8px 20px;
   border-radius: 6px;
   margin-right: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
   background-color: #f38e70;
   color: #fff;
   font-size: 14px;
@@ -22,14 +23,21 @@
 
 .form-text-image {
   padding: 14px 16px;
-  margin: 0 210px 0 360px;
+  margin-left: 360px;
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+.file-field {
+  width: 300px;
+  height: 170px;
+  display: block;
+  overflow: scroll;
 }
 
 input[name="new_animal[images][]"] {
-  color: #fff;
+  margin-top: 15px;
 }
 
 img {
@@ -40,18 +48,15 @@ img {
 
 #image-list {
   height: 220px;
-  margin: 0 375px;
+  width: 400px;
   flex-wrap: wrap;
   overflow: scroll;
   background-color: #eeeeee;
   display: flex;
   border: dotted lightgray;
+  flex-direction: row;
+  justify-content: space-evenly;
 } 
-
-.image-element {
-  float: left;
-  width: calc(100% / 4);
-}
 
 .form-text-post {
   padding: 14px 16px;

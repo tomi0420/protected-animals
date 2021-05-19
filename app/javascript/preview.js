@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', function(){
       inputHTML.setAttribute('name', 'new_animal[images][]')
       inputHTML.setAttribute('type', 'file')
 
-      const NewAnimalImage = document.getElementById('new_animal_image')
+      const fileFieldsArea = document.querySelector('.file-field')
 
       imageElement.appendChild(blobImage);
-      NewAnimalImage.appendChild(inputHTML)
+      fileFieldsArea.appendChild(inputHTML)
       ImageList.appendChild(imageElement);
 
       inputHTML.addEventListener('change', (e) => {
-        file = e.target.files[0];zz
+        file = e.target.files[0];
         blob = window.URL.createObjectURL(file);
 
         createImageHTML(blob)
@@ -30,13 +30,8 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     document.getElementById('new_animal_image').addEventListener('change', function(e){
-      // const imageContent = document.querySelector('img');
-      // if (imageContent){
-      //   imageContent.remove();
-      // }
-
-      const file = e.target.files[0];
-      const blob = window.URL.createObjectURL(file);
+      let file = e.target.files[0];
+      let blob = window.URL.createObjectURL(file);
 
       createImageHTML(blob);
     });
