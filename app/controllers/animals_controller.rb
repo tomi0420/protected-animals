@@ -2,7 +2,7 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: :show
 
   def index
-    @animals = Animal.all                   #保護団体を登録後、N＋１問題を解消
+    @animals = Animal.order('created_at DESC')                   #保護団体を登録後、N＋１問題を解消
   end
 
   def new
@@ -20,6 +20,7 @@ class AnimalsController < ApplicationController
   end
 
   def show
+    binding.pry
   end
 
   private
