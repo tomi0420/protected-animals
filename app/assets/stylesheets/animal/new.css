@@ -50,6 +50,7 @@ img {
 
 .image-element {
   float: left;
+  width: calc(100% / 4);
 }
 
 .form-text-post {
