@@ -1,5 +1,9 @@
 class AnimalsController < ApplicationController
 
+  def index
+    @animals = Animal.all                   #保護団体を登録後、N＋１問題を解消
+  end
+
   def new
     @new_animal = NewAnimal.new
   end
