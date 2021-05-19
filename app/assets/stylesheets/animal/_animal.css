@@ -1,0 +1,18 @@
+.animal-content {
+  margin-bottom: 20px;
+}
+
+.animal-content a {
+  text-decoration: none;
+  color: black;
+}
+
+.animal-img {
+  width: 200px;
+  height: 200px;
+}
+
+.animal-info {
+  width: 100%;
+  padding: 0 10px;
+}

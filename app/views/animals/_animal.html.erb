@@ -1,0 +1,25 @@
+<div class="post-animal">
+  <div class='animal-content'>
+    <%= link_to animal_path(animal.id) do %>
+      <div class="animal-image">
+        <%= image_tag animal.images[0], class: "animal-img" %>
+      </div>
+      <div class="animal-info">
+        <div class='animal-name'>
+          <%= animal.name %>
+        </div>
+        <div class="animal-sex">
+          <%= animal.sex.name %>
+        </div>
+        <div class="animal-tags-kind-name">
+          <% animal.tags.each do |tag| %>
+            <%= tag.kind_name %>
+          <% end %>
+        </div> 
+        <div class="animal-area" >
+          <%= animal.prefecture.name %>
+        </div> 
+      </div>
+    <% end %>
+  </div>
+</div>

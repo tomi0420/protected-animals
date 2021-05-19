@@ -1,1 +1,9 @@
 <%= render "shared/header" %>
+
+<div class="main">
+  <div class="left-info"></div>
+  <div class="center-info">
+    <%= render partial: "animal", collection: @animals %>
+  </div>
+  <div class="light-info"></div>
+</div>
