@@ -1,8 +1,10 @@
 <div class="animal-details">
   <div class="detail-images">
-    <% @animal.images.each do |image| %>
-      <%= image_tag image, class:'animal-images' %>
-    <% end %>
+    <div class="slider">
+      <% @animal.images.each do |image| %>
+        <%= image_tag image, class:'animal-images' %>
+      <% end %>
+    </div>
   </div>
   <div class="detail-info">
   </div>
