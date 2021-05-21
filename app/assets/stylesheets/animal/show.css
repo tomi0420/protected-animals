@@ -68,3 +68,15 @@
 .slick-dots .slick-active button{
   background:#333;/*ドットボタンの現在地表示の色*/
 }
+
+/*info以下の記述*/
+
+.detail-info {
+  margin-left: 425px;
+}
+
+.detail-heading {
+  display: inline;
+	font-size: 26px;
+	background-image: linear-gradient(rgba(0,0,0,0) 70%, rgb(252,81,133) 70%);
+}
