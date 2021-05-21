@@ -86,7 +86,6 @@
 | name               | string     | null: false                    |
 | age                | integer    | null: false                    |
 | birth_date         | integer    | null: false                    |
-| info               | text       | null: false                    |
 | animal_category_id | integer    | null: false                    |
 | personality        | text       | null: false                    |
 | size_id            | integer    | null: false                    |
