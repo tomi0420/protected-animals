@@ -1,6 +1,7 @@
 .animal-content {
-  margin-bottom: 20px;
-  border: solid 1px black;
+  width: 300px;
+  height: 330px;
+  margin-bottom: 30px;
 }
 
 .animal-content a {
@@ -9,14 +10,13 @@
 }
 
 .animal-image {
-  width: 260px;
   height: 230px;
-  background-color: #eeeeee;
+  background-color: #D8D8D8;
   position: relative;
 }
 
 .animal-img {
-  width: 240px;
+  width: 280px;
   height: 210px;
   position: absolute;
   margin: auto;
@@ -27,4 +27,5 @@
 .animal-info {
   width: 100%;
   padding: 0 10px;
+  background-color: #fff;
 }

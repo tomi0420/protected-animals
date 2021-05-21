@@ -71,6 +71,10 @@
 
 /*info以下の記述*/
 
+.animal-details {
+  background-color: #f0f3f8;
+}
+
 .detail-info {
   margin-left: 425px;
 }

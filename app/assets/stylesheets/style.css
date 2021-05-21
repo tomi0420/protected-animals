@@ -3,6 +3,7 @@
   width: 100%;
   background-color: black;
   position: relative;
+  position: fixed;
 }
 
 .header_bar_front {
@@ -16,6 +17,7 @@
   left: 20px;
   right: 20px;
   bottom: 20px;
+  z-index:500;
 }
 
 .header-left {
