@@ -1,9 +1,60 @@
 <div class="animal-details">
   <div class="detail-images">
-    <% @animal.images.each do |image| %>
-      <%= image_tag image, class:'animal-images' %>
-    <% end %>
+    <div class="slider">
+      <% @animal.images.each do |image| %>
+        <%= image_tag image, class:'animal-images' %>
+      <% end %>
+    </div>
   </div>
   <div class="detail-info">
+
+      <h2 class="detail-heading">名前</h2>
+      <div class="detail-name">
+        <%= @animal.name %>
+      </div>
+
+      <h2 class="detail-heading">年齢</h2>
+      <div class="detail-age">
+        <%= @animal.age %>
+      </div>
+
+      <h2 class="detail-heading">誕生日</h2>
+      <div class="detail-birth_date">
+        <%= @animal.birth_date %>
+      </div>
+
+      <h2 class="detail-heading">カテゴリー</h2>
+      <div class="detail-category">
+        <%= @animal.animal_category.name %>
+      </div>
+
+      <h2 class="detail-heading">性格・特徴</h2>
+      <div class="detail-personality">
+        <%= @animal.personality %>
+      </div>
+
+      <h2 class="detail-heading">大きさ</h2>
+      <div class="detail-size">
+        <%= @animal.size.name %>
+      </div>
+
+      <h2 class="detail-heading">性別</h2>
+      <div class="detail-sex">
+        <%= @animal.sex.name %>
+      </div>
+
+      <h2 class="detail-heading">エリア</h2>
+      <div class="detail-prefecture">
+        <%= @animal.prefecture.name %>
+      </div>
+
+      <h2 class="detail-heading">種類</h2>
+      <div class="detail-kind_name">
+        <% @animal.tags.each do |tag| %>
+          <%= tag.kind_name %>
+        <% end %>
+      </div>
+
+
   </div>
 </div>

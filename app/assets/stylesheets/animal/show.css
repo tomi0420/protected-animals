@@ -1,0 +1,82 @@
+.slider {
+  width:70%;
+  margin:0 auto;
+}
+
+.slider img {
+  width:40vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height:auto;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8);/*左右の画像のサイズを80%に*/
+  transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+  transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+  opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+
+
+.fa-chevron-left {
+  font-size: 20px;
+  position: absolute;
+  cursor: pointer;/*マウスカーソルを指マークに*/
+  color: #808080;
+  left: -30px;
+  top: 42%;
+}
+
+.fa-chevron-right {
+  font-size: 20px;
+  position: absolute;
+  cursor: pointer;/*マウスカーソルを指マークに*/
+  color: #808080;
+  right: -30px;
+  top: 42%;
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align:center;
+  margin:20px 0 0 0;
+}
+
+.slick-dots li {
+  display:inline-block;
+  margin:0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width:8px;/*ドットボタンのサイズ*/
+  height:8px;/*ドットボタンのサイズ*/
+  display:block;
+  border-radius:50%;
+  background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+  background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+/*info以下の記述*/
+
+.detail-info {
+  margin-left: 425px;
+}
+
+.detail-heading {
+  display: inline;
+	font-size: 26px;
+	background-image: linear-gradient(rgba(0,0,0,0) 70%, rgb(252,81,133) 70%);
+}
