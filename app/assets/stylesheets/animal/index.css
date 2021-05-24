@@ -4,15 +4,16 @@
   overflow: scroll;
 }
 
+.right-info {
+  width: 400px;
+  background-color: #848f96;
+}
+
 .center-info {
+  width: calc(100vw - 400px);
   margin: 200px 50px 0 50px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   z-index: 1;
-}
-
-.right-info {
-  width: 300px;
-  background-color: #848f96;
 }
