@@ -2,6 +2,7 @@
   display: flex;
   background-color: #f0f3f8;
   overflow: scroll;
+  height: auto;
 }
 
 .right-info {
