@@ -1,20 +1,18 @@
 .main {
   display: flex;
   background-color: #f0f3f8;
-  height: 100vh;
   overflow: scroll;
 }
 
 .center-info {
-  height: 100vh;
   margin: 200px 50px 0 50px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .right-info {
-  height: 100%;
   width: 800px;
   background-color: #848f96;
 }
