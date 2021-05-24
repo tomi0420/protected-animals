@@ -1,22 +1,18 @@
 .main {
   display: flex;
-}
-
-.left-info,
-.light-info
- {
-  width: 300px;
-  height: 100vh;
-  background-color: #eeeeee;
+  background-color: #f0f3f8;
+  overflow: scroll;
 }
 
 .center-info {
-  width: calc(100vw - 200px - 200px);
-  height: 100vh;
-  margin-top: 100px;
-  background-color: #fff;
+  margin: 200px 50px 0 50px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
+.right-info {
+  width: 800px;
+  background-color: #848f96;
+}
