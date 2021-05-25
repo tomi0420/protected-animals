@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     post 'user/addresses', to: 'users/registrations#create_user_address'
   end
   root to: 'animals#index'
-  resources :animals, except: :destroy
+  resources :animals, except: :destroy do
+    collection do
+      get 'search'
+    end
+  end
 end

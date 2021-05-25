@@ -22,6 +22,12 @@ class AnimalsController < ApplicationController
   def show
   end
 
+  def search
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['kind_name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
+  end
+
   private
 
   def new_animal_params
