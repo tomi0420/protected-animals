@@ -78,6 +78,12 @@ input[name="new_animal[name]"]
   border: none;
 }
 
+.child{
+  border-bottom:#666 1px solid;
+  margin: 10px 0;
+  padding-left: 11px;
+}
+
 textarea[name="new_animal[personality]"] {
   background-color: #eeeeee;
   height: 150px;

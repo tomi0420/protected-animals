@@ -28,7 +28,7 @@
       <span class="must">必須</span>名前
     </div>
     <div class="field">
-      <%= f.text_field :name %>
+      <%= f.text_field :name, autocomplete: 'off' %>
     </div>
   </div>
 
@@ -47,7 +47,8 @@
       <%# <span class="must">タグ</span>犬種・猫種 %>
     </div>
     <div class="field">
-      <%= f.text_field :kind_name %>
+      <%= f.text_field :kind_name, autocomplete: 'off' %>
+      <div id="search-result"></div>
     </div>
   </div>
 
@@ -74,7 +75,7 @@
       <span class="must">必須</span>年齢
     </div>
     <div class="field">
-      <%= f.text_field :age %>
+      <%= f.text_field :age, autocomplete: 'off' %>
     </div>
   </div>
 
