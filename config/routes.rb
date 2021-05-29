@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :animals, except: :destroy do
     collection do
       get 'search'
+      get 'complex_search'
     end
   end
 end

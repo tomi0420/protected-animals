@@ -1,8 +1,10 @@
 class AnimalsController < ApplicationController
   before_action :set_animal, only: :show
+  before_action :search_animal, only: [:index, :complex_search]
 
   def index
     @animals = Animal.order('created_at DESC')                   #保護団体を登録後、N＋１問題を解消
+    set_animal_column       # privateメソッド内で定義
   end
 
   def new
@@ -28,6 +30,10 @@ class AnimalsController < ApplicationController
     render json:{ keyword: tag }
   end
 
+  def complex_search
+    @results = @q.result
+  end
+
   private
 
   def new_animal_params
@@ -36,6 +42,14 @@ class AnimalsController < ApplicationController
 
   def set_animal
     @animal = Animal.find(params[:id])
+  end
+
+  def search_animal
+    @q = Animal.ransack(params[:q])
+  end
+
+  def set_animal_column
+    @animal_sex = Animal.select("sex_id").distinct  # 重複なくnameカラムのデータを取り出す
   end
 
 end
