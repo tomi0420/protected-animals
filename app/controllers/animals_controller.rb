@@ -31,7 +31,8 @@ class AnimalsController < ApplicationController
   end
 
   def complex_search
-    @results = @q.result
+    @animals = @q.result.order('created_at DESC')
+    render :index
   end
 
   private
