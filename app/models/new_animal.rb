@@ -6,14 +6,10 @@ class NewAnimal
   with_options presence: true do
     validates :images
     validates :name
-    validates :animal_category_id
     validates :kind_name
-    validates :size_id
-    validates :sex_id
     validates :age, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 30 }
     validates :birth_date
     validates :personality
-    validates :prefecture_id, numericality: { other_than: 1 }
   end
 
   def save
