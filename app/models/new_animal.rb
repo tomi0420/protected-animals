@@ -12,12 +12,15 @@ class NewAnimal
     validates :personality
   end
 
-  def save
-   animal = Animal.create( images: images, name: name, age: age, birth_date: birth_date, personality: personality, animal_category_id: animal_category_id, size_id: size_id, sex_id: sex_id, prefecture_id: prefecture_id )
-   tag = Tag.where( kind_name: kind_name ).first_or_initialize
-   tag.save
+  def save(tag_list)
+    animal = Animal.create( images: images, name: name, age: age, birth_date: birth_date, personality: personality, animal_category_id: animal_category_id, size_id: size_id, sex_id: sex_id, prefecture_id: prefecture_id )
 
-   AnimalTag.create( animal_id: animal.id, tag_id: tag.id )
+    tag_list.each do |tag_name|
+      tag = Tag.where(kind_name: tag_name).first_or_initialize
+      tag.save
+
+      AnimalTag.create( animal_id: animal.id, tag_id: tag.id )
+    end
   end
 
 end
