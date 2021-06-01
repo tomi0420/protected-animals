@@ -1,18 +1,42 @@
 <h1>
   探す
 </h1>
+
 <%= search_form_for @q, url: complex_search_animals_path do |f| %>
+  <%= f.label :kind_name_cont, "犬種・猫種" %>
+  <br>
+  <%= f.search_field :tags_kind_name_cont %>
+  <br>
   <%= f.label :sex_id_eq, '性別' %>
+  <br>
   <%= f.collection_select :sex_id_eq, Sex.all, :id, :name,  include_blank: '指定なし' %>
   <br>
   <%= f.label :animal_category_id_eq, '種類' %>
+  <br>
   <%= f.collection_select :animal_category_id_eq, AnimalCategory.all, :id, :name,  include_blank: '指定なし' %>
   <br>
   <%= f.label :size_id_eq, '大きさ' %>
+  <br>
   <%= f.collection_select :size_id_eq, Size.all, :id, :name,  include_blank: '指定なし' %>
   <br>
   <%= f.label :prefecture_id_eq, 'エリア' %>
+  <br>
   <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name,  include_blank: '指定なし' %>
+  <br>
+  <%= f.label :age, '年齢' %>
+  <br>
+  <%= f.radio_button :age_lteq, '' %>
+  指定なし
+  <%= f.radio_button :age_lteq, '1' %>
+  １歳以下
+  <%= f.radio_button :age_lteq, '6' %>
+  6歳以下
+  <%= f.radio_button :age_lteq, '10' %>
+  10歳以下
+  <%= f.radio_button :age_lteq, '15' %>
+  15歳以下
+  <%= f.radio_button :age_gteq, '16' %>
+  16歳以上
   <br>
   <%= f.submit '検索' %>
 <% end %>
