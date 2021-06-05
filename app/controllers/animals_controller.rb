@@ -12,7 +12,7 @@ class AnimalsController < ApplicationController
 
   def create
     @new_animal = NewAnimal.new(new_animal_params)
-    tag_list = params[:new_animal][:kind_name].split("、")
+    tag_list = params[:new_animal][:kind_name]
     if @new_animal.valid?
        @new_animal.save(tag_list)
        redirect_to root_path
@@ -24,22 +24,25 @@ class AnimalsController < ApplicationController
   def show
   end
 
-  def search
-    return nil if params[:keyword] == ""
-    tag = Tag.where(['kind_name LIKE ?', "%#{params[:keyword]}%"] )
-    render json:{ keyword: tag }
-  end
+  # def search
+  #   return nil if params[:keyword] == ""
+  #   # tags = []
+  #   # params["keyword"].split('、').each do |k|
+  #   #   tags.push(Tag.where(['kind_name LIKE ?', "%#{k}%"] ))  
+  #   # end
+  #   tag = Tag.where(['kind_name LIKE ?', "%#{params[:keyword]}%"] )
+  #   render json:{ keyword: tag }
+  # end
 
   def complex_search
     @animals = @q.result.order('created_at DESC')
-
     render :index
   end
 
   private
 
   def new_animal_params
-    params.require(:new_animal).permit( :name, :animal_category_id, :kind_name, :size_id, :sex_id, :age, :birth_date, :personality, :prefecture_id, images: [] )
+    params.require(:new_animal).permit( :name, :animal_category_id, :size_id, :sex_id, :age, :birth_date, :personality, :prefecture_id, images: [], kind_name: [] )
   end
 
   def set_animal
