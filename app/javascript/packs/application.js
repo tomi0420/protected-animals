@@ -4,11 +4,13 @@
 // that code so it'll be compiled.
 
 // import '@fortawesome/fontawesome-free/js/all';
+//= require jquery ←追加
 require("@rails/ujs").start()
 // require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('../preview')
+require('../like')
 // require('../tag')
 // require('../dropdown')
 require('jquery')

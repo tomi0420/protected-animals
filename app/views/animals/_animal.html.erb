@@ -4,8 +4,13 @@
       <%= image_tag animal.images[0], class: "animal-img" %>
     </div>
     <div class="animal-info">
-      <div class='animal-name'>
-        <%= animal.name %>
+      <div class="side_by_side">
+        <div class='animal-name'>
+          <%= animal.name %>
+        </div>
+        <div id="animal_<%= animal.id %>">
+          <%= render partial: 'like', locals: { animal: animal } %>
+        </div>
       </div>
       <div class="animal-sex">
         <%= animal.sex.name %>
