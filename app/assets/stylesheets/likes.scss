@@ -1,0 +1,57 @@
+// Place all the styles related to the likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.like-link {
+  text-decoration: none;
+}
+
+.like-link:hover {
+  background-color: #fff!important;
+}
+
+.like-btn {
+  font-size: 15px;
+  color: #808080;
+}
+ 
+.unlike-btn {
+  font-size: 15px;
+  /* heartAnimationアニメーションを200ミリ秒かけて実行する */
+  animation: starAnimation .2s;
+  /* アイコン色を黒から赤へ変更する */
+  color: #ffd700;
+}
+
+// .LikesIcon-fa-heart{
+//   font-size: 30px;
+// }
+// .LikesIcon-fa-heart.heart{
+//   /* heartAnimationアニメーションを200ミリ秒かけて実行する */
+//   animation: heartAnimation .2s;
+//   /* アイコン色を黒から赤へ変更する */
+//   color: #e2264d;
+// }
+
+@keyframes starAnimation {
+  0% {
+    /* アイコンサイズをもとのより小さくする */
+    transform: scale(0.5);
+  }
+  10% {
+    transform: scale(0.7);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1.5);
+  }
+  100% {
+    /* もとのサイズに戻す */
+    transform: scale(1.0);
+  }
+}

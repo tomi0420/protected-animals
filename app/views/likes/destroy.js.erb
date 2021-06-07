@@ -1,0 +1,2 @@
+
+$('#animal_<%= @animal.id %>').html("<%= j(render partial: 'animals/like', locals: {animal: @animal}) %>");

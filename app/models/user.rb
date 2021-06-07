@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :user_address
+  has_many :likes
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
@@ -20,6 +21,10 @@ class User < ApplicationRecord
 
   with_options presence: true, format: { with: /[\p{katakana} ー－&&[^ -~｡-ﾟ]]+/, message: 'Full-width katakana characters' } do
     validates :last_name_kana, :first_name_kana
+  end
+
+  def liked_by?(animal_id)
+    likes.where(animal_id: animal_id).exists?
   end
 
 end

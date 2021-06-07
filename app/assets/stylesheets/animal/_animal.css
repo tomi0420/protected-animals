@@ -29,3 +29,9 @@
   padding: 0 10px;
   background-color: #fff;
 }
+
+.side_by_side {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
