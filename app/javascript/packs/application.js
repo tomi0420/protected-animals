@@ -10,7 +10,7 @@ require("@rails/activestorage").start()
 require("channels")
 require('../preview')
 // require('../tag')
-require('../dropdown')
+// require('../dropdown')
 require('jquery')
 require('slick.js')
 
