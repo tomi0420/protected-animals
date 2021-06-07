@@ -6,22 +6,21 @@ class NewAnimal
   with_options presence: true do
     validates :images
     validates :name
-    validates :animal_category_id
     validates :kind_name
-    validates :size_id
-    validates :sex_id
     validates :age, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 30 }
     validates :birth_date
     validates :personality
-    validates :prefecture_id, numericality: { other_than: 1 }
   end
 
-  def save
-   animal = Animal.create( images: images, name: name, age: age, birth_date: birth_date, personality: personality, animal_category_id: animal_category_id, size_id: size_id, sex_id: sex_id, prefecture_id: prefecture_id )
-   tag = Tag.where( kind_name: kind_name ).first_or_initialize
-   tag.save
+  def save(tag_list)
+    animal = Animal.create( images: images, name: name, age: age, birth_date: birth_date, personality: personality, animal_category_id: animal_category_id, size_id: size_id, sex_id: sex_id, prefecture_id: prefecture_id )
 
-   AnimalTag.create( animal_id: animal.id, tag_id: tag.id )
+    tag_list.each do |tag_name|
+      tag = Tag.where(kind_name: tag_name).first_or_initialize
+      tag.save
+
+      AnimalTag.create( animal_id: animal.id, tag_id: tag.id )
+    end
   end
 
 end

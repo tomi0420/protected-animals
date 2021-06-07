@@ -67,8 +67,8 @@ img {
 }
 
 input[name="new_animal[name]"],
-input[name="new_animal[kind_name]"],
 input[name="new_animal[age]"],
+input[name="new_animal[kind_name][]"],
 input[name="new_animal[name]"]
 {
   background-color: #eeeeee;
@@ -76,6 +76,27 @@ input[name="new_animal[name]"]
   width: 200px;
   border-radius: 6px;
   border: none;
+}
+
+.form-text-tag-post {
+  height: 180px;
+  padding: 14px 16px;
+  flex-wrap: wrap;
+  margin: 40px 360px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.child{
+  border-bottom:#666 1px solid;
+  margin: 10px 0;
+  padding-left: 11px;
 }
 
 textarea[name="new_animal[personality]"] {
