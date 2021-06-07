@@ -23,4 +23,8 @@ class User < ApplicationRecord
     validates :last_name_kana, :first_name_kana
   end
 
+  def liked_by?(animal_id)
+    likes.where(animal_id: animal_id).exists?
+  end
+
 end
