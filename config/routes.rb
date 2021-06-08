@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :conservation_groups
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }  
@@ -7,6 +6,13 @@ Rails.application.routes.draw do
     get 'user/addresses', to: 'users/registrations#new_user_address'
     post 'user/addresses', to: 'users/registrations#create_user_address'
   end
+
+
+  devise_for :conservation_group, controllers: {
+    registrations: 'users/registrations'
+  }
+
+  
   root to: 'animals#index'
   resources :animals, except: :destroy do
     collection do

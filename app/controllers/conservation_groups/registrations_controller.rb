@@ -1,43 +1,13 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
+class ConservationGroups::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   def new
-    @user = User.new
+    @conservation_group = ConservationGroup.new
   end
 
-  def create
-    @user = User.new(sign_up_params)
-     unless @user.valid?
-       render :new and return
-     end
-    session["devise.regist_data"] = {user: @user.attributes}
-    session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    @user_address = @user.build_user_address
-    render :new_user_address
-  end
-
-  def create_user_address
-    @user = User.new(session["devise.regist_data"]["user"])
-    @user_address = UserAddress.new(user_address_params)
-     unless @user_address.valid?
-       render :new_user_address and return
-     end
-    @user.build_user_address(@user_address.attributes)
-    @user.save
-    session["devise.regist_data"]["user"].clear
-    sign_in(:user, @user)
-    redirect_to root_path
-  end
- 
-  private
- 
-  def user_address_params
-    params.require(:user_address).permit(:postal_code, :prefecture_id, :city, :address, :building, :phone_number)
-  end
-  
   # GET /resource/sign_up
   # def new
   #   super
