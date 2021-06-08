@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   devise_for :conservation_group, controllers: {
     registrations: 'conservation_groups/registrations'
   }
-
+  devise_scope :conservation_group do
+    get 'addresses', to: 'conservation_group/registrations#new_address'
+    post 'addresses', to: 'conservation_group/registrations#create_address'
+  end
   
   root to: 'animals#index'
   resources :animals, except: :destroy do
