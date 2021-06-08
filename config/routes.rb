@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
 
   devise_for :conservation_group, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'conservation_groups/registrations'
   }
 
   

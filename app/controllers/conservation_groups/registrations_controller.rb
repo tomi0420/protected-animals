@@ -8,6 +8,17 @@ class ConservationGroups::RegistrationsController < Devise::RegistrationsControl
     @conservation_group = ConservationGroup.new
   end
 
+  def create
+    @conservation_group = ConservationGroup.new(sign_up_params)
+     unless @conservation_group.valid?
+       render :new and return
+     end
+    session["devise.regist_data"] = {conservation_group: @conservation_group.attributes}
+    session["devise.regist_data"][:conservation_group]["password"] = params[:conservation_group][:password]
+    @conservation_group_address = @conservation_group.build_conservation_group_address
+    render :new_address
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
