@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_user_address
   end
 
-  def create_user_address
+  def create_address
     @user = User.new(session["devise.regist_data"]["user"])
     @user_address = UserAddress.new(user_address_params)
      unless @user_address.valid?

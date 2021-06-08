@@ -14,12 +14,14 @@
             <%= link_to "投稿する", new_animal_path %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           </div>
-      <% else %> 
+      <% else %>
           <div class="logout_now">
             <%= link_to "ログイン", new_user_session_path, calss: "user_session"%>
             <%= link_to "新規登録", new_user_registration_path, class: "user_registration" %>
-            <%= link_to "団体ログイン", new_conservation_group_session_path, calss: "user_session"%>
-            <%= link_to "団体新規登録", new_conservation_group_registration_path, class: "user_registration" %>
+          </div>
+          <div class="logout_now">
+            <%= link_to "団体ログイン", new_conservation_group_session_path, calss: "conservation_group_session"%>
+            <%= link_to "団体新規登録", new_conservation_group_registration_path, class: "conservation_group_registration" %>
           </div>
         </div>
       <% end %> 

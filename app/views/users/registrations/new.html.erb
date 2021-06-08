@@ -4,7 +4,7 @@
       <h2>新規登録</h2>
    </div>
    <div class="form">
-    <%= form_with model: @user_conservation, url: conservation_group_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %> 
 
       <div class='form-text-wrap'>

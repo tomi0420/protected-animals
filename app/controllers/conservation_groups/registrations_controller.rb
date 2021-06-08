@@ -16,7 +16,26 @@ class ConservationGroups::RegistrationsController < Devise::RegistrationsControl
     session["devise.regist_data"] = {conservation_group: @conservation_group.attributes}
     session["devise.regist_data"][:conservation_group]["password"] = params[:conservation_group][:password]
     @conservation_group_address = @conservation_group.build_conservation_group_address
-    render :new_address
+    render :new_conservation_group_address
+  end
+
+  def create_address
+    @conservation_group = ConservationGroup.new(session["devise.regist_data"]["conservation_group"])
+    @conservation_group_address = ConservationGroupAddress.new(conservation_group_address_params)
+     unless @conservation_group_address.valid?
+       render :new_conservation_group_address and return
+     end
+    @conservation_group.build_conservation_group_address(@conservation_group_address.attributes)
+    @conservation_group.save
+    session["devise.regist_data"]["conservation_group"].clear
+    sign_in(:conservation_group, @conservation_group)
+    redirect_to root_path
+  end
+ 
+  private
+ 
+  def conservation_group_address_params
+    params.require(:conservation_group_address).permit(:postal_code, :prefecture_id, :city, :address, :building, :phone_number)
   end
 
   # GET /resource/sign_up
