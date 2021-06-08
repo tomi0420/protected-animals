@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :conservation_groups
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }  
