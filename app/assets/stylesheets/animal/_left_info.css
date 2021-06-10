@@ -1,0 +1,48 @@
+.user_registration,
+.user_session,
+.conservation_group_form,
+.login_now,
+.search-animal,
+.animal-post
+ {
+  padding : 15px;
+  line-height: 1;
+  cursor :pointer;
+}
+
+
+
+
+.left-info ul {
+  margin: 0;
+  padding: 0;
+  background :#fff;
+  list-style: none;
+}
+
+.conservation_group_form li,
+.search-animal li
+ {
+  height: 0;
+  overflow: hidden;
+  list-style: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#menu_bar01:checked ~ #links01 li,
+#menu_bar02:checked ~ #links02 li
+ {
+  height: 54px;
+  padding: 20px;
+  opacity: 1;
+}
+
+input[id="menu_bar01"],
+input[id="menu_bar02"]
+ {
+  display: none;
+}
