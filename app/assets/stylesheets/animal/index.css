@@ -6,8 +6,8 @@
 }
 
 .left-info {
-  width: 300px;
-  padding: 40px 20px;
+  width: 260px;
+  padding: 40px 10px 40px 20px;
   background-color: #fff;
 }
 
@@ -17,8 +17,8 @@
 }
 
 .center-info {
-  width: calc(100vw - 300px);
-  /* margin: 200px 50px 0 50px; */
+  width: calc(100vw - 260px);
+  margin-top: 50px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
