@@ -46,6 +46,7 @@
 
 | Column             | Type   | Options                   |
 | ------------------ | ------ | ------------------------- |
+| group_name         | string | null: false               |
 | nickname           | string | null: false               |
 | first_name         | string | null: false               |
 | last_name          | string | null: false               |

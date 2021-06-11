@@ -10,6 +10,7 @@ class ConservationGroup < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
 
   with_options presence: true do
+    validates :group_name
     validates :nickname
     validates :email, uniqueness: { case_sensitive: true }
   end

@@ -4,7 +4,7 @@
       <h2>新規登録</h2>
    </div>
    <div class="form">
-    <%= form_with model: @conservation_group, url: conservation_group_registration_path, id: 'new_conservation_group', class: 'new_conservation_group', local: true do |f| %>
+    <%= form_with model: @conservation_group, url: conservation_group_registration_path, id: 'new_conservation_group', class: 'new_conservation_group', autocomplete: "off", local: true do |f| %>
       <%= devise_error_messages! %>
 
       <div class='form-text-wrap'>
@@ -12,7 +12,7 @@
           <span class="indispensable">必須</span>Eメール
         </div>
         <div class="field">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autocomplete: "off" %>
         </div>
       </div>
 
@@ -21,7 +21,7 @@
           <span class="indispensable">必須</span>パスワード
         </div>
         <div class="field">
-          <%= f.password_field :password, autocomplete: "new-password" %>
+          <%= f.password_field :password, autocomplete: "off" %>
         </div>
       </div>
 
@@ -30,7 +30,16 @@
           <span class="indispensable">必須</span>パスワード （確認用）
         </div>
         <div class="field">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      </div>
+
+      <div class='form-text-wrap'>
+        <div class="info">
+          <span class="indispensable">必須</span>団体名
+        </div>
+        <div class="field">
+          <%= f.text_field :group_name, autocomplete: "off" %>
         </div>
       </div>
 
@@ -39,7 +48,7 @@
           <span class="indispensable">必須</span>ニックネーム
         </div>
         <div class="field">
-          <%= f.text_field :nickname, autofocus: true %>
+          <%= f.text_field :nickname, autocomplete: "off" %>
         </div>
       </div>
 
@@ -48,8 +57,8 @@
           <span class="indispensable">必須</span>お名前 （全角）
         </div>
         <div class='field'>
-            <%= f.text_field :last_name %>
-            <%= f.text_field :first_name %>
+            <%= f.text_field :last_name, autocomplete: "off" %>
+            <%= f.text_field :first_name, autocomplete: "off" %>
         </div>
       </div>
 
@@ -58,8 +67,8 @@
           <span class="indispensable">必須</span>お名前 （全角カナ）
         </div>
         <div class='field'>
-          <%= f.text_field :last_name_kana %>
-          <%= f.text_field :first_name_kana %>
+          <%= f.text_field :last_name_kana, autocomplete: "off" %>
+          <%= f.text_field :first_name_kana, autocomplete: "off" %>
         </div>
       </div>
 
