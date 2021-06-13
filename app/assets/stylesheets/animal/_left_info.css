@@ -4,13 +4,13 @@
 .search-animal,
 .animal-post
  {
-  padding : 15px;
+  padding : 15px 10px 15px 40px;
   line-height: 1;
   cursor :pointer;
 }
 
 .conservation_group_form {
-  padding: 15px 15px 15px 12.5px;
+  padding: 15px 15px 15px 37px;
 }
 
 .left-info ul {
