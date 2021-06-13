@@ -1,7 +1,12 @@
 .animal-content {
-  width: 300px;
-  height: 330px;
-  margin-bottom: 30px;
+  width: 250px;
+  height: 300px;
+  margin-bottom: 20px;
+  /* overflow: scroll; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
 }
 
 .animal-content a {
@@ -10,28 +15,35 @@
 }
 
 .animal-image {
-  height: 230px;
-  background-color: #D8D8D8;
-  position: relative;
+  height: 180px;
 }
 
 .animal-img {
-  width: 280px;
-  height: 210px;
-  position: absolute;
+  width: 250px;
+  height: 180px;
   margin: auto;
-  top: 10px;
-  left: 10px;
+  /* border-radius: 15px; */
 }
 
 .animal-info {
   width: 100%;
-  padding: 0 10px;
+  height: 80px;
+  padding: 10px 20px;
   background-color: #fff;
+  font-size: 14px;
+  /* border-radius: 5px; */
 }
 
 .side_by_side {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.fa-mars {
+  color: #15aabf;
+}
+
+.fa-venus {
+  color: #f783ac;
 }

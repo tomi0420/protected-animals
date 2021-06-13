@@ -20,5 +20,6 @@ class Prefecture < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :user_addresses
+  has_many :conservation_group_addresses
   has_many :animals
 end

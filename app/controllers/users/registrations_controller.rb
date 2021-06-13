@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   def new
@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_user_address
   end
 
-  def create_user_address
+  def create_address
     @user = User.new(session["devise.regist_data"]["user"])
     @user_address = UserAddress.new(user_address_params)
      unless @user_address.valid?
@@ -37,6 +37,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def user_address_params
     params.require(:user_address).permit(:postal_code, :prefecture_id, :city, :address, :building, :phone_number)
   end
+  
   # GET /resource/sign_up
   # def new
   #   super
@@ -74,9 +75,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :last_name, :first_name_kana, :last_name_kana])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

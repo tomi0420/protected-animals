@@ -1,0 +1,110 @@
+.user_registration,
+.user_session,
+.login_now,
+.search-animal,
+.animal-post
+ {
+  padding : 15px 10px 15px 40px;
+  line-height: 1;
+  cursor :pointer;
+}
+
+.conservation_group_form {
+  padding: 15px 15px 15px 37px;
+}
+
+.left-info ul {
+  margin: 0;
+  padding: 0;
+  background :#fff;
+  list-style: none;
+}
+
+.conservation_group_form li,
+.search-animal li
+ {
+  height: 0;
+  overflow: hidden;
+  list-style: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.left-info i {
+  margin-right: 25px;
+}
+
+.conservation_group_form i {
+  margin-right: 23px;
+}
+
+.login_now i {
+  margin-right: 21px;
+}
+
+.animal-post i {
+  margin-right: 20px;
+}
+
+.fa-mars,
+.fa-venus
+ {
+  padding-left: 6px;
+}
+
+.fa-sign-out-alt {
+  padding-left: 2px;
+}
+
+.fa-globe-asia,
+.fa-paw
+ {
+  padding-right: 2px;
+}
+
+.conservation_group_registration i,
+.conservation_group_session i {
+  margin-right: 26px;
+}
+
+#menu_bar01:checked ~ #links01 li {
+  height: 50px;
+  padding: 30px 20px 0 3.25px;
+  opacity: 1;
+}
+
+#menu_bar02:checked ~ #links02 li {
+  height: 80px;
+  padding: 30px 20px 0 0;
+  opacity: 1;
+}
+
+input[id="menu_bar01"],
+input[id="menu_bar02"]
+ {
+  display: none;
+}
+
+input[name="q[tags_kind_name_cont]"] {
+  background-color: #eeeeee;
+  height: 30px;
+  width: 180px;
+  border-radius: 6px;
+  border: none;
+}
+
+select[name="q[sex_id_eq]"],
+select[name="q[animal_category_id_eq]"],
+select[name="q[size_id_eq]"],
+select[name="q[prefecture_id_eq]"]
+ {
+  background-color: #eeeeee;
+  height: 25px;
+  width: 98px;
+  border-radius: 6px;
+  border: none;
+}
+

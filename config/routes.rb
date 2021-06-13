@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions:      'users/sessions',
+    passwords:     'users/passwords'
   }  
   devise_scope :user do
-    get 'user/addresses', to: 'users/registrations#new_user_address'
-    post 'user/addresses', to: 'users/registrations#create_user_address'
+    get 'user/addresses', to: 'users/registrations#new_address'
+    post 'user/addresses', to: 'users/registrations#create_address'
+  end
+  devise_for :conservation_group, controllers: {
+    registrations: 'conservation_groups/registrations',
+    sessions:      'conservation_groups/sessions',
+    passwords:     'conservation_groups/passwords'
+  }
+  devise_scope :conservation_group do
+    get 'conservation_group/addresses', to: 'conservation_groups/registrations#new_address'
+    post 'conservation_group/addresses', to: 'conservation_groups/registrations#create_address'
   end
   root to: 'animals#index'
   resources :animals, except: :destroy do

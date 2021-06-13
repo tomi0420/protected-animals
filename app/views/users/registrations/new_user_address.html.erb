@@ -1,0 +1,65 @@
+<div class="session-form">
+  <div class="form1">
+    <%= form_for @user_address do |f| %>
+      <%= render "devise/shared/error_messages", resource: @user_address %>
+
+        <div class='form-text-wrap'>
+          <div class="info">
+            <span class="indispensable">必須</span>郵便番号
+          </div>
+          <div class="field">
+            <%= f.text_field :postal_code, autocomplete: 'off', maxlength:"8" %>
+          </div>
+        </div>
+
+        <div class='form-text-wrap'>
+          <div class="info">
+            <span class="indispensable">必須</span>都道府県
+          </div>
+          <div class="field">
+            <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+          </div>
+        </div>
+
+        <div class='form-text-wrap'>
+          <div class="info">
+            <span class="indispensable">必須</span>市区町村
+          </div>
+          <div class="field">
+            <%= f.text_field :city, autocomplete: 'off' %>
+          </div>
+        </div>
+
+        <div class='form-text-wrap'>
+          <div class="info">
+            <span class="indispensable">必須</span>番地
+          </div>
+          <div class="field">
+            <%= f.text_field :address, autocomplete: 'off' %>
+          </div>
+        </div>
+
+        <div class='form-text-wrap'>
+          <div class="info">
+            <span class="indispensable">任意</span>建物名
+          </div>
+          <div class="field">
+            <%= f.text_field :building, autocomplete: 'off' %>
+          </div>
+        </div>
+
+        <div class='form-text-wrap'>
+          <div class="info">
+            <span class="indispensable">必須</span>電話番号
+          </div>
+          <div class="field">
+            <%= f.text_field :phone_number, autocomplete: 'off', maxlength:"11" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "登録", class: "registration" %>
+        </div>
+    <% end %>
+  </div>
+</div>

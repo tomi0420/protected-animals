@@ -1,10 +1,10 @@
 <%= render "shared/header" %>
 
 <div class="main">
+  <div class="left-info">
+    <%= render partial: "side_bar" %>
+  </div>
   <div class="center-info">
     <%= render partial: "animal", collection: @animals %>
-  </div>
-  <div class="right-info">
-    <%= render partial: "search_animal" %>
   </div>
 </div>

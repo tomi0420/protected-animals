@@ -1,0 +1,85 @@
+<ul class="side_bar">
+
+  <% if !user_signed_in? && !conservation_group_signed_in? %>
+    <li class="user_registration">
+      <i class="fas fa-user"></i>
+      <%= link_to "新規登録", new_user_registration_path %>
+    </li>
+    <li class="user_session">
+      <i class="fas fa-user"></i>
+      <%= link_to "ログイン", new_user_session_path %>
+    </li>
+    <li class="conservation_group_form">
+      <i class="fas fa-users"></i>
+      <label for="menu_bar01">団体の方はこちら</label>
+      <input type="checkbox" id="menu_bar01" />
+      <ul id="links01">
+        <li class="conservation_group_registration" >
+          <i class="fas fa-building"></i>
+          <%= link_to "新規登録", new_conservation_group_registration_path %>
+        </li>
+        <li class="conservation_group_session">
+          <i class="fas fa-building"></i>
+          <%= link_to "ログイン", new_conservation_group_session_path %>
+        </li>
+      </ul>
+    </li>
+  <% elsif user_signed_in? %>
+    <li class="login_now">
+      <i class="fas fa-sign-out-alt"></i>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </li>
+  <% elsif conservation_group_signed_in? %>
+    <li class="login_now">
+      <i class="fas fa-sign-out-alt"></i>
+      <%= link_to "ログアウト", destroy_conservation_group_session_path, method: :delete %>
+    </li>
+    <li class="animal-post">
+    <i class="fas fa-bone"></i>
+    <%= link_to "投稿する", new_animal_path %>
+    </li>
+  <% end %>
+
+  <li class="search-animal">
+    <i class="fas fa-search"></i>
+    <label for="menu_bar02">探す</label>
+    <input type="checkbox" id="menu_bar02" />
+    <ul id="links02">
+      <%= search_form_for @q, url: complex_search_animals_path do |f| %>
+        <li class="search-form-list">
+          <%= f.label :kind_name_cont, "犬種・猫種" %>
+          <%= f.search_field :tags_kind_name_cont %>
+        </li>
+        <li class="search-form-list">
+          <%= f.label :sex_id_eq, '性別' %>
+          <%= f.collection_select :sex_id_eq, Sex.all, :id, :name,  include_blank: '指定なし' %>
+        </li>
+        <li class="search-form-list">
+          <%= f.label :animal_category_id_eq, '種類' %>
+          <%= f.collection_select :animal_category_id_eq, AnimalCategory.all, :id, :name,  include_blank: '指定なし' %>
+        </li>
+        <li class="search-form-list">
+          <%= f.label :size_id_eq, '大きさ' %>
+          <%= f.collection_select :size_id_eq, Size.all, :id, :name,  include_blank: '指定なし' %>
+        </li>
+        <li class="search-form-list">
+          <%= f.label :prefecture_id_eq, 'エリア' %>
+          <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name,  include_blank: '指定なし' %>
+        </li>
+        <li class="search-form-list">
+          <%= f.label :age, '年齢' %>
+          <%= f.radio_button :age_lteq, '' %>指定なし
+          <%= f.radio_button :age_lteq, '1' %>１歳以下
+          <%= f.radio_button :age_lteq, '6' %>6歳以下
+          <%= f.radio_button :age_lteq, '10' %>10歳以下
+          <%= f.radio_button :age_lteq, '15' %>15歳以下
+          <%= f.radio_button :age_gteq, '16' %>16歳以上
+        </li>
+        <li>
+          <%= f.submit '検索' %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+
+</ul>

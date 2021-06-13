@@ -5,23 +5,22 @@
     </div>
     <div class="animal-info">
       <div class="side_by_side">
-        <div class='animal-name'>
-          <%= animal.name %>
+        <div class="animal-sex&name">
+          <% if animal.sex.name == "オス" %>
+           <i class="fas fa-paw"></i> : <%= animal.name %>   <i class="fas fa-mars"></i>
+          <% else %>
+           <i class="fas fa-paw"></i> : <%= animal.name %>   <i class="fas fa-venus"></i>
+          <% end %>
         </div>
         <div id="animal_<%= animal.id %>">
           <%= render partial: 'like', locals: { animal: animal } %>
         </div>
       </div>
-      <div class="animal-sex">
-        <%= animal.sex.name %>
-      </div>
       <div class="animal-tags-kind-name">
-        <% animal.tags.each do |tag| %>
-          <%= tag.kind_name %>
-        <% end %>
+        <i class="fas fa-dog"></i> : <%= animal.tags[0].kind_name %>
       </div> 
       <div class="animal-area" >
-        <%= animal.prefecture.name %>
+        <i class="fas fa-globe-asia"></i> : <%= animal.prefecture.name %>
       </div> 
     </div>
   <% end %>

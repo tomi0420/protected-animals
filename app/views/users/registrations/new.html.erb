@@ -1,0 +1,74 @@
+<div class="contents row">
+  <div class="registration-form">
+   <div class="title">
+      <h2>新規登録</h2>
+   </div>
+   <div class="form">
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= devise_error_messages! %> 
+
+      <div class='form-text-wrap'>
+        <div class="info">
+          <span class="indispensable">必須</span>Eメール
+        </div>
+        <div class="field">
+          <%= f.email_field :email, autocomplete: 'off'%>
+        </div>
+      </div>
+
+      <div class='form-text-wrap'>
+        <div class="info">
+          <span class="indispensable">必須</span>パスワード
+        </div>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: 'off' %>
+        </div>
+      </div>
+
+      <div class='form-text-wrap'>
+        <div class="info">
+          <span class="indispensable">必須</span>パスワード （確認用）
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: 'off' %>
+        </div>
+      </div>
+
+      <div class='form-text-wrap'>
+        <div class="info">
+          <span class="indispensable">必須</span>ニックネーム
+        </div>
+        <div class="field">
+          <%= f.text_field :nickname, autocomplete: 'off' %>
+        </div>
+      </div>
+
+      <div class='form-text-wrap'>
+        <div class="info">
+          <span class="indispensable">必須</span>お名前 （全角）
+        </div>
+        <div class='field'>
+            <%= f.text_field :last_name, autocomplete: 'off' %>
+            <%= f.text_field :first_name, autocomplete: 'off' %>
+        </div>
+      </div>
+
+      <div class='form-text-wrap'>
+        <div class="info">
+          <span class="indispensable">必須</span>お名前 （全角カナ）
+        </div>
+        <div class='field'>
+          <%= f.text_field :last_name_kana, autocomplete: 'off' %>
+          <%= f.text_field :first_name_kana, autocomplete: 'off' %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "次へ  >", class: "next" %>
+      </div>
+
+     <% end %>
+     </div>
+    </div>
+  </div>
+</div>
