@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_075818) do
+ActiveRecord::Schema.define(version: 2021_06_13_092230) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -95,19 +95,14 @@ ActiveRecord::Schema.define(version: 2021_06_15_075818) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "room_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_room_users_on_room_id"
-    t.index ["user_id"], name: "index_room_users_on_user_id"
-  end
-
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.bigint "user_id", null: false
+    t.bigint "conservation_group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["conservation_group_id"], name: "index_rooms_on_conservation_group_id"
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -151,7 +146,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_075818) do
   add_foreign_key "animal_tags", "tags"
   add_foreign_key "animals", "conservation_groups"
   add_foreign_key "conservation_group_addresses", "conservation_groups"
-  add_foreign_key "room_users", "rooms"
-  add_foreign_key "room_users", "users"
+  add_foreign_key "rooms", "conservation_groups"
+  add_foreign_key "rooms", "users"
   add_foreign_key "user_addresses", "users"
 end

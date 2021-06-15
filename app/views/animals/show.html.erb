@@ -7,6 +7,14 @@
       <% end %>
     </div>
   </div>
+
+  <% if user_signed_in? %>
+    <div class="chat-link">
+      <%= link_to "お問い合わせはこちらから", rooms_path(room: { name: "#{current_user.nickname}と#{@animal.conservation_group.nickname}のトーク", user_id: current_user.id, conservation_group_id: @animal.conservation_group_id }), method: :post %>
+    </div>
+  <% end %>
+
+
   <div class="detail-info">
     <h2 class="detail-heading">名前</h2>
     <div class="detail-name">

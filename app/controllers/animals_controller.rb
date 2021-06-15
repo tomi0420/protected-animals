@@ -13,7 +13,6 @@ class AnimalsController < ApplicationController
   def create
     @new_animal = NewAnimal.new(new_animal_params)
     tag_list = params[:new_animal][:kind_name]
-    binding.pry
     if @new_animal.valid?
        @new_animal.save(tag_list)
        redirect_to root_path

@@ -5,6 +5,8 @@ class ConservationGroup < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :conservation_group_address
+  has_many :animals
+  has_many :rooms
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
