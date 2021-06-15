@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_065934) do
+ActiveRecord::Schema.define(version: 2021_06_15_075818) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -93,6 +93,21 @@ ActiveRecord::Schema.define(version: 2021_06_08_065934) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "room_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_room_users_on_room_id"
+    t.index ["user_id"], name: "index_room_users_on_user_id"
+  end
+
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "kind_name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -133,5 +148,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_065934) do
   add_foreign_key "animal_tags", "animals"
   add_foreign_key "animal_tags", "tags"
   add_foreign_key "conservation_group_addresses", "conservation_groups"
+  add_foreign_key "room_users", "rooms"
+  add_foreign_key "room_users", "users"
   add_foreign_key "user_addresses", "users"
 end
