@@ -2,12 +2,10 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    binding.pry
-    if @room.save 
-      redirect_to root_path
+    if @room.save
+       redirect_to room_chats_path(@room)         # 重複しても保存される（あとで直す）
     end
   end
-
 
   private
 

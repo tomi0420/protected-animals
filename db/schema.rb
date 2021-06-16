@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_092230) do
+ActiveRecord::Schema.define(version: 2021_06_15_094549) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 2021_06_13_092230) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conservation_group_id"], name: "index_animals_on_conservation_group_id"
+  end
+
+  create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.bigint "room_id"
+    t.bigint "user_id"
+    t.bigint "conservation_group_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["conservation_group_id"], name: "index_chats_on_conservation_group_id"
+    t.index ["room_id"], name: "index_chats_on_room_id"
+    t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
   create_table "conservation_group_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -145,6 +157,9 @@ ActiveRecord::Schema.define(version: 2021_06_13_092230) do
   add_foreign_key "animal_tags", "animals"
   add_foreign_key "animal_tags", "tags"
   add_foreign_key "animals", "conservation_groups"
+  add_foreign_key "chats", "conservation_groups"
+  add_foreign_key "chats", "rooms"
+  add_foreign_key "chats", "users"
   add_foreign_key "conservation_group_addresses", "conservation_groups"
   add_foreign_key "rooms", "conservation_groups"
   add_foreign_key "rooms", "users"
