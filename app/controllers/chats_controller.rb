@@ -13,6 +13,7 @@ class ChatsController < ApplicationController
       else
         @chat = @room.chats.new(group_chat_params)
       end
+      # binding.pry
         if @chat.save
           ActionCable.server.broadcast 'chat_channel', content: @chat
         else

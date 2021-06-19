@@ -1,27 +1,29 @@
 <div class='animal-content'>
-  <%= link_to animal_path(animal.id) do %>
+  <%= link_to animal_path(animal.id), class:'animal-list' do %>
     <div class="animal-image">
       <%= image_tag animal.images[0], class: "animal-img" %>
     </div>
     <div class="animal-info">
       <div class="side_by_side">
-        <div class="animal-sex&name">
+        <div class="animal-sex-name">
           <% if animal.sex.name == "オス" %>
-           <i class="fas fa-paw"></i> : <%= animal.name %>   <i class="fas fa-mars"></i>
+            <i class="fas fa-paw"></i> : <%= animal.name %>   <i class="fas fa-mars"></i>
           <% else %>
-           <i class="fas fa-paw"></i> : <%= animal.name %>   <i class="fas fa-venus"></i>
+            <i class="fas fa-paw"></i> : <%= animal.name %>   <i class="fas fa-venus"></i>
           <% end %>
         </div>
+  <% end %>
         <div id="animal_<%= animal.id %>">
           <%= render partial: 'like', locals: { animal: animal } %>
         </div>
       </div>
-      <div class="animal-tags-kind-name">
-        <i class="fas fa-dog"></i> : <%= animal.tags[0].kind_name %>
-      </div> 
-      <div class="animal-area" >
-        <i class="fas fa-globe-asia"></i> : <%= animal.prefecture.name %>
-      </div> 
-    </div>
-  <% end %>
+    <%= link_to animal_path(animal.id), class:'animal-list' do %>
+        <div class="animal-tags-kind-name">
+          <i class="fas fa-dog"></i> : <%= animal.tags[0].kind_name %>
+        </div> 
+        <div class="animal-area" >
+          <i class="fas fa-globe-asia"></i> : <%= animal.prefecture.name %>
+        </div> 
+      </div>
+    <%end%>
 </div>

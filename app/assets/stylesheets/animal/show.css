@@ -1,11 +1,11 @@
 .slider {
-  width:70%;
-  margin:0 auto;
+  width:80%;
+  margin: 0 auto;
 }
 
 .slider img {
-  width:40vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
-  height:auto;
+  width:40vw;
+  height:50vh;
 }
 
 .slider .slick-slide {
@@ -73,18 +73,115 @@
 
 .animal-details {
   background-color: #f0f3f8;
+  z-index: 1;
+  display: flex;
 }
 
-.detail-images {
-  padding-top: 100px;
+.left-bar {
+  width: calc(100vw - 350px);
+}
+
+.detail-animal-name {
+  height: 120px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animal-images {
+  height: 300px;
+  width: 300px;
+}
+
+.form-link {
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 200px;
+}
+
+.fa-comment,
+.fa-home
+ {
+  margin-right: 15px;
+}
+
+.chat-link a {
+  display: block;
+  width: 280px;
+  height: 70px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4d650;
+  border-radius: 35px;
+  transition: all .3s;
+}
+
+.chat-link a:hover {
+	background-color: #fff;
+	border: 5px solid #f4d650;
+  color: #333;
+}
+
+.visit-link a {
+  display: block;
+  width: 280px;
+  height: 70px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e47863;
+  border-radius: 35px;
+  transition: all .3s;
+}
+
+.visit-link a:hover {
+	background-color: #fff;
+	border: 5px solid #e47863;
+  color: #333;
+}
+
+.detail-head {
+  height: 60px;
+  font-size: 25px;
+}
+
+.right-bar {
+  width: 350px;
+  height: auto;
+  background-color: #fff;
+  padding: 30px 25px;
 }
 
 .detail-info {
-  margin-left: 425px;
+  display: flex;
+  margin: 20px 0;
 }
 
-.detail-heading {
-  display: inline;
-	font-size: 26px;
-	background-image: linear-gradient(rgba(0,0,0,0) 70%, rgb(252,81,133) 70%);
+.detail-name,
+.detail-age,
+.detail-birth-date,
+.detail-personality,
+.detail-size,
+.detail-sex,
+.detail-prefecture,
+.detail-kind-name,
+.detail-group-name {
+  width: 190px;
+}
+
+.detail-info h4 {
+  width: 110px;
+}
+
+.detail-kind-name {
+  white-space: nowrap;
 }

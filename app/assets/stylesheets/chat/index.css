@@ -92,6 +92,7 @@
 .chat-form {
   height: 90px;
   width: 550px;
+  margin: 0 auto;
   background-color: #dddddd;
   padding: 20px 40px;
   display: flex;

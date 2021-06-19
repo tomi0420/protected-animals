@@ -10,13 +10,25 @@ consumer.subscriptions.create("ChatChannel", {
   },
 
   received(data) {
-    const html = `
-    <div class="mycomment">
-      <p>${data.content.content}</p>
-    </div>`;
-    const chats = document.getElementById('chats');
-    const newChat = document.getElementById('chat_content');
-    chats.insertAdjacentHTML('beforeend', html);
-    newChat.value='';
+    console.log(data)
+    if (data.content.conservation_group_id == null) {
+      const html = `
+      <div class="mycomment">
+        <p>${data.content.content}</p>
+      </div>`;
+      const chats = document.getElementById('chats');
+      const newChat = document.getElementById('chat_content');
+      chats.insertAdjacentHTML('beforeend', html);
+      newChat.value='';
+    } else {
+      const html = `
+      <div class="mycomment">
+        <p>${data.content.content}</p>
+      </div>`;
+      const chats = document.getElementById('chats');
+      const newChat = document.getElementById('chat_content');
+      chats.insertAdjacentHTML('beforeend', html);
+      newChat.value='';
+    }
   }
 });

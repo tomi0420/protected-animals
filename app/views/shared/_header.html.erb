@@ -6,11 +6,11 @@
     <div class="header-right">
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
-          <span><%= current_user.nickname %></span>
+          <span><%= "#{current_user.nickname}さん" %></span>
         </div> 
       <% elsif conservation_group_signed_in? %>
         <div class="user_nav grid-6">
-          <span><%= current_conservation_group.nickname %></span>
+          <span><%= "#{current_conservation_group.nickname}さん" %></span>
         </div>
       <% end %>
     </div>
