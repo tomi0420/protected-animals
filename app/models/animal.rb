@@ -10,5 +10,7 @@ class Animal < ApplicationRecord
   has_many :tags, through: :animal_tags
   has_many_attached :images
   has_many :likes
+  has_many :rooms
+  belongs_to :conservation_group
 
 end

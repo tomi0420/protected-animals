@@ -1,15 +1,12 @@
 .animal-content {
-  width: 250px;
-  height: 300px;
-  margin-bottom: 20px;
-  /* overflow: scroll; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
+  margin-bottom: 60px;
 }
 
-.animal-content a {
+.animal-content:hover {
+  transform:translateY(-10px)
+}
+
+.animal-list {
   text-decoration: none;
   color: black;
 }
@@ -22,22 +19,23 @@
   width: 250px;
   height: 180px;
   margin: auto;
-  /* border-radius: 15px; */
 }
 
 .animal-info {
-  width: 100%;
+  width: 250px;
   height: 80px;
   padding: 10px 20px;
   background-color: #fff;
   font-size: 14px;
-  /* border-radius: 5px; */
 }
 
 .side_by_side {
   display: flex;
-  justify-content: space-between;
   width: 100%;
+}
+
+.animal-sex-name {
+  width: 180px;
 }
 
 .fa-mars {

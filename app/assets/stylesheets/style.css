@@ -5,7 +5,7 @@
 
 .header_bar_front {
   background-color: #fff;
-  margin-right: 100px;
+  padding-right: 100px;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@
 }
 
 .header-left {
-  background-color: #de8042;
+  background-color: #53b39a;
   width: 180px;
   height: 100%;
   display: flex;
@@ -32,4 +32,3 @@
   font-weight: bold;
   text-decoration: none;
 }
-

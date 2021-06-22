@@ -1,50 +1,97 @@
-<%# <%= render "shared/header" %>
+<%= render "shared/header" %>
+
 <div class="animal-details">
-  <div class="detail-images">
-    <div class="slider">
-      <% @animal.images.each do |image| %>
-        <%= image_tag image, class:'animal-images' %>
+  <div class="left-bar">
+    <div class="detail-animal-name">
+      <% if @animal.sex.name == "オス" %>
+        <%= @animal.name %><p><small>くん</small></p>
+      <% else %>
+        <%= @animal.name %><p><small>ちゃん</small></p>
       <% end %>
     </div>
+    <div class="detail-images">
+      <div class="slider">
+        <% @animal.images.each do |image| %>
+          <%= image_tag image, class:'animal-images' %>
+        <% end %>
+      </div>
+    </div>
+    <% if user_signed_in? %>
+      <div class="form-link">
+        <div class="chat-link">
+          <%= link_to rooms_path(room: { name: "#{current_user.nickname}と#{@animal.conservation_group.nickname}のトーク", user_id: current_user.id, conservation_group_id: @animal.conservation_group_id, animal_id: @animal.id }), method: :post do %>
+            <i class="far fa-comment"></i>
+            <span>お問い合わせはこちらから</span>
+          <% end %>
+        </div>
+        <div class="visit-link">
+          <%= link_to "#" do %>
+            <i class="fas fa-home"></i>
+            <span>見学予約はこちらから</span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="detail-info">
-    <h2 class="detail-heading">名前</h2>
-    <div class="detail-name">
-      <%= @animal.name %>
-    </div>
-    <h2 class="detail-heading">年齢</h2>
-    <div class="detail-age">
-      <%= @animal.age %>
-    </div>
-    <h2 class="detail-heading">誕生日</h2>
-    <div class="detail-birth_date">
-      <%= @animal.birth_date %>
-    </div>
-    <h2 class="detail-heading">カテゴリー</h2>
-    <div class="detail-category">
-      <%= @animal.animal_category.name %>
-    </div>
-    <h2 class="detail-heading">性格・特徴</h2>
-    <div class="detail-personality">
-      <%= @animal.personality %>
-    </div>
-    <h2 class="detail-heading">大きさ</h2>
-    <div class="detail-size">
-      <%= @animal.size.name %>
-    </div>
-    <h2 class="detail-heading">性別</h2>
-    <div class="detail-sex">
-      <%= @animal.sex.name %>
-    </div>
-    <h2 class="detail-heading">エリア</h2>
-    <div class="detail-prefecture">
-      <%= @animal.prefecture.name %>
-    </div>
-    <h2 class="detail-heading">種類</h2>
-    <div class="detail-kind_name">
-      <% @animal.tags.each do |tag| %>
-        <%= tag.kind_name %>
-      <% end %>
-    </div>
-  </div>
+
+  <ul class="right-bar" >
+    <div class="detail-head">詳細情報</div>
+    <li class="detail-info">
+      <h4 class="detail-heading">名前</h4>
+      <div class="detail-name">
+        <%= @animal.name %>
+      </div>
+    </li>
+     <li class="detail-info">
+      <h4 class="detail-heading">種類</h4>
+      <div class="detail-kind-name">
+        <% @animal.tags.each do |tag| %>
+          <%= tag.kind_name %><br>
+        <% end %>
+      </div>
+    </li>
+    <li class="detail-info">
+      <h4 class="detail-heading">年齢</h4>
+      <div class="detail-age">
+        <%= @animal.age %>才
+      </div>
+    </li>
+    <li class="detail-info">
+      <h4 class="detail-heading">性格・特徴</h4>
+      <div class="detail-personality">
+        <%= @animal.personality %>
+      </div>
+    </li>
+    <li class="detail-info">
+      <h4 class="detail-heading">大きさ</h4>
+      <div class="detail-size">
+        <%= @animal.size.name %>
+      </div>
+    </li>
+    <li class="detail-info">
+      <h4 class="detail-heading">性別</h4>
+      <div class="detail-sex">
+        <%= @animal.sex.name %>
+      </div>
+    </li>
+    <li class="detail-info">
+      <h4 class="detail-heading">エリア</h4>
+      <div class="detail-prefecture">
+        <%= @animal.prefecture.name %>
+      </div>
+    </li>
+    <li class="detail-info">
+      <h4 class="detail-heading">誕生日</h4>
+      <div class="detail-birth-date">
+        <%= @animal.birth_date %>
+      </div>
+    </li>
+    <li class="detail-info">
+      <h4 class="detail-group-name">団体名</h4>
+      <div class="detail-group-name">
+        <%= @animal.conservation_group.group_name %>
+      </div>
+    </li>
+  </ul>
+
 </div>
