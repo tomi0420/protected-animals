@@ -20,6 +20,10 @@
   list-style: none;
 }
 
+.side_bar > li:hover {
+  background-color: #dcdcdc;
+}
+
 .conservation_group_form li,
 .search-animal li
  {
@@ -89,11 +93,10 @@ input[id="menu_bar02"]
 }
 
 input[name="q[tags_kind_name_cont]"] {
-  background-color: #eeeeee;
   height: 30px;
   width: 180px;
   border-radius: 6px;
-  border: none;
+  border: 1px solid #333;
 }
 
 select[name="q[sex_id_eq]"],
@@ -101,10 +104,14 @@ select[name="q[animal_category_id_eq]"],
 select[name="q[size_id_eq]"],
 select[name="q[prefecture_id_eq]"]
  {
-  background-color: #eeeeee;
   height: 25px;
   width: 98px;
   border-radius: 6px;
-  border: none;
+  border: 1px solid #333;
 }
+
+#links02 {
+  margin-top: 5px;
+}
+
 

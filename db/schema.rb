@@ -108,11 +108,13 @@ ActiveRecord::Schema.define(version: 2021_06_15_094549) do
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name", default: "", null: false
     t.bigint "user_id", null: false
     t.bigint "conservation_group_id", null: false
+    t.bigint "animal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["animal_id"], name: "index_rooms_on_animal_id"
     t.index ["conservation_group_id"], name: "index_rooms_on_conservation_group_id"
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
@@ -161,6 +163,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_094549) do
   add_foreign_key "chats", "rooms"
   add_foreign_key "chats", "users"
   add_foreign_key "conservation_group_addresses", "conservation_groups"
+  add_foreign_key "rooms", "animals"
   add_foreign_key "rooms", "conservation_groups"
   add_foreign_key "rooms", "users"
   add_foreign_key "user_addresses", "users"

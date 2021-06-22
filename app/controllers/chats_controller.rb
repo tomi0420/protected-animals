@@ -13,13 +13,12 @@ class ChatsController < ApplicationController
       else
         @chat = @room.chats.new(group_chat_params)
       end
-      # binding.pry
-        if @chat.save
-          ActionCable.server.broadcast 'chat_channel', content: @chat
-        else
-          @chats = @room.chats.includes(:user, :conservation_group)
-          render :index
-        end
+      if @chat.save
+        ActionCable.server.broadcast 'chat_channel', content: @chat
+      else
+        @chats = @room.chats.includes(:user, :conservation_group)
+        render :index
+      end
   end
 
   private

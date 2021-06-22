@@ -19,7 +19,7 @@
     <% if user_signed_in? %>
       <div class="form-link">
         <div class="chat-link">
-          <%= link_to rooms_path(room: { name: "#{current_user.nickname}と#{@animal.conservation_group.nickname}のトーク", user_id: current_user.id, conservation_group_id: @animal.conservation_group_id }), method: :post do %>
+          <%= link_to rooms_path(room: { name: "#{current_user.nickname}と#{@animal.conservation_group.nickname}のトーク", user_id: current_user.id, conservation_group_id: @animal.conservation_group_id, animal_id: @animal.id }), method: :post do %>
             <i class="far fa-comment"></i>
             <span>お問い合わせはこちらから</span>
           <% end %>

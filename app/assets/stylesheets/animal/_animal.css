@@ -3,7 +3,7 @@
 }
 
 .animal-content:hover {
-  transform:translateY(-5px)
+  transform:translateY(-10px)
 }
 
 .animal-list {
