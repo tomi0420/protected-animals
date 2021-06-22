@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   get 'chats/index'
   get 'chats/show'
   devise_for :users, controllers: {
@@ -30,9 +31,10 @@ Rails.application.routes.draw do
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 
 
-  resources :rooms, only: [:new, :create, :destroy] do
+  resources :rooms, only: [:index, :new, :create, :destroy] do
     resources :chats, only: [:index, :create]
   end
 
+  resources :users, only: :show
 
 end
