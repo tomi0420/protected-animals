@@ -1,5 +1,7 @@
 .animal-content {
   margin-bottom: 60px;
+  width: 250px;
+  height: 260px;
 }
 
 .animal-content:hover {

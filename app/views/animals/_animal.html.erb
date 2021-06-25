@@ -14,7 +14,7 @@
         </div>
   <% end %>
         <div id="animal_<%= animal.id %>">
-          <%= render partial: 'like', locals: { animal: animal } %>
+          <%= render partial: 'animals/like', locals: { animal: animal } %>
         </div>
       </div>
     <%= link_to animal_path(animal.id), class:'animal-list' do %>

@@ -37,6 +37,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: :show
-  resources :conservation_groups, only: :show
+  resources :conservation_groups, only: [:index, :show]
 
 end
