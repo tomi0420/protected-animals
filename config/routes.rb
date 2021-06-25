@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :chats, only: [:index, :create]
   end
 
-  resources :users, only: :show
+  resources :users, only: [:index, :show]
   resources :conservation_groups, only: [:index, :show]
 
 end

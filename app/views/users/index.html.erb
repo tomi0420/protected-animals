@@ -1,28 +1,10 @@
 <%= render "shared/header" %>
 
 <div class="my_page">
-  <ul class="user_info">
-    <li class="users-likes-index">
-      <%= link_to users_path(id: @user.id), class: "likes-link" do %>
-        <div class="likes-image">
-          <%= image_tag("index-dog-cat.jpeg") %>
-        </div>
-        <div class="likes-index">
-          <span>いいねした投稿一覧</span>
-        </div>
-      <% end %>
-    </li>
-    <li class="users-chat-rooms-index" >
-      <%= link_to "#", class: "rooms-link" do %>
-        <div class="chat-image">
-          <%= image_tag("chat-dog-cat.png") %>
-        </div>
-        <div class="chat-index">
-          <span>チャットルーム一覧</span>
-        </div>
-      <% end %>
-    </li>
-  </ul>
+
+  <div class="center-info">
+    <%= render partial: "animals/animal", collection: @animals %>
+  </div>
 
   <ul class="right-bar" >
     <div class="user-topic">ユーザー情報</div>
