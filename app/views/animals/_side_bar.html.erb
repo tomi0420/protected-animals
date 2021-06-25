@@ -38,6 +38,10 @@
       <i class="fas fa-sign-out-alt"></i>
       <%= link_to "ログアウト", destroy_conservation_group_session_path, method: :delete %>
     </li>
+    <li class="my_page_link">
+      <i class="fas fa-user"></i>
+      <%= link_to "マイページ", conservation_group_path(current_conservation_group.id) %>
+    </li>
     <li class="animal-post">
     <i class="fas fa-bone"></i>
     <%= link_to "投稿する", new_animal_path %>

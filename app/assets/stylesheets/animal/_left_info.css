@@ -21,9 +21,9 @@
   list-style: none;
 }
 
-.side_bar > li:hover {
+/* .side_bar > li:hover {
   background-color: #dcdcdc;
-}
+} */
 
 .conservation_group_form li,
 .search-animal li

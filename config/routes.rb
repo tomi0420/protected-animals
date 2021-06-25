@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'conservation_groups/show'
   get 'users/show'
   get 'chats/index'
   get 'chats/show'
@@ -36,5 +37,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: :show
+  resources :conservation_groups, only: :show
 
 end

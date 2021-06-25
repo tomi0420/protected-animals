@@ -2,20 +2,20 @@
 
 <div class="my_page">
   <ul class="user_info">
-    <li class="users-likes-index">
-      <%= link_to "#", class: "likes-link" do %>
-        <div class="likes-image">
-          <%= image_tag("index-dog-cat.jpeg") %>
+    <li class="group-posts-index">
+      <%= link_to "#", class: "posts-link" do %>
+        <div class="posts-image">
+          <%= image_tag("posts-dog-cat.jpeg") %>
         </div>
-        <div class="likes-index">
-          <span>いいねした投稿一覧</span>
+        <div class="posts-index">
+          <span>投稿一覧</span>
         </div>
       <% end %>
     </li>
     <li class="users-chat-rooms-index" >
       <%= link_to "#", class: "rooms-link" do %>
         <div class="chat-image">
-          <%= image_tag("chat-dog-cat.png") %>
+          <%= image_tag("room-dog-cat.jpeg") %>
         </div>
         <div class="chat-index">
           <span>チャットルーム一覧</span>
@@ -29,68 +29,74 @@
     <li class="detail-info">
       <h4 class="detail-heading">ニックネーム</h4>
       <div class="detail-nickname">
-        <%= @user.nickname %>
+        <%= @conservation_group.nickname %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">姓</h4>
       <div class="detail-last-name">
-        <%= @user.last_name %>
+        <%= @conservation_group.last_name %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">名</h4>
       <div class="detail-first-name">
-        <%= @user.first_name %>
+        <%= @conservation_group.first_name %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">姓(カナ)</h4>
       <div class="detail-last-name-kana">
-        <%= @user.last_name_kana %>
+        <%= @conservation_group.last_name_kana %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">名(カナ)</h4>
       <div class="detail-first-name-kana">
-        <%= @user.first_name_kana %>
+        <%= @conservation_group.first_name_kana %>
+      </div>
+    </li>
+    <li class="detail-info">
+      <h4 class="detail-heading">団体名</h4>
+      <div class="detail-group-name">
+        <%= @conservation_group.group_name %>
       </div>
     </li>
     <div class="user-address-topic">住所情報</div>
     <li class="detail-info">
       <h4 class="detail-heading">郵便番号</h4>
       <div class="detail-postal-code">
-        〒<%= @user.user_address.postal_code %>
+        〒<%= @conservation_group.conservation_group_address.postal_code %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">都道府県</h4>
       <div class="detail-prefecture">
-        <%= @user.user_address.prefecture.name %>
+        <%= @conservation_group.conservation_group_address.prefecture.name %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">市区町村</h4>
       <div class="detail-municipality">
-        <%= @user.user_address.city %>
+        <%= @conservation_group.conservation_group_address.city %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">番地</h4>
       <div class="detail-address">
-        <%= @user.user_address.address %>
+        <%= @conservation_group.conservation_group_address.address %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">建物名</h4>
       <div class="detail-building">
-        <%= @user.user_address.building %>
+        <%= @conservation_group.conservation_group_address.building %>
       </div>
     </li>
     <li class="detail-info">
       <h4 class="detail-heading">電話番号</h4>
       <div class="detail-phone-number">
-        <%= @user.user_address.phone_number %>
+        <%= @conservation_group.conservation_group_address.phone_number %>
       </div>
     </li>
   </ul>
