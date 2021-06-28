@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 
 
-  resources :rooms, only: [:index, :new, :create, :destroy] do
+  resources :rooms, only: [:index, :create, :show, :destroy] do
     resources :chats, only: [:index, :create]
   end
 

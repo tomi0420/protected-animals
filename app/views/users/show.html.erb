@@ -13,7 +13,7 @@
       <% end %>
     </li>
     <li class="users-chat-rooms-index" >
-      <%= link_to "#", class: "rooms-link" do %>
+      <%= link_to rooms_path(id: current_user.id), class: "rooms-link" do %>
         <div class="chat-image">
           <%= image_tag("chat-dog-cat.png") %>
         </div>
@@ -23,76 +23,5 @@
       <% end %>
     </li>
   </ul>
-
-  <ul class="right-bar" >
-    <div class="user-topic">ユーザー情報</div>
-    <li class="detail-info">
-      <h4 class="detail-heading">ニックネーム</h4>
-      <div class="detail-nickname">
-        <%= @user.nickname %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">姓</h4>
-      <div class="detail-last-name">
-        <%= @user.last_name %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">名</h4>
-      <div class="detail-first-name">
-        <%= @user.first_name %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">姓(カナ)</h4>
-      <div class="detail-last-name-kana">
-        <%= @user.last_name_kana %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">名(カナ)</h4>
-      <div class="detail-first-name-kana">
-        <%= @user.first_name_kana %>
-      </div>
-    </li>
-    <div class="user-address-topic">住所情報</div>
-    <li class="detail-info">
-      <h4 class="detail-heading">郵便番号</h4>
-      <div class="detail-postal-code">
-        〒<%= @user.user_address.postal_code %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">都道府県</h4>
-      <div class="detail-prefecture">
-        <%= @user.user_address.prefecture.name %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">市区町村</h4>
-      <div class="detail-municipality">
-        <%= @user.user_address.city %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">番地</h4>
-      <div class="detail-address">
-        <%= @user.user_address.address %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">建物名</h4>
-      <div class="detail-building">
-        <%= @user.user_address.building %>
-      </div>
-    </li>
-    <li class="detail-info">
-      <h4 class="detail-heading">電話番号</h4>
-      <div class="detail-phone-number">
-        <%= @user.user_address.phone_number %>
-      </div>
-    </li>
-  </ul>
-
+  <%= render partial: "right_bar" %>
 </div>

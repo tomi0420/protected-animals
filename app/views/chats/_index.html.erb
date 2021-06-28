@@ -1,0 +1,34 @@
+<div id="chats">
+  <% @room.chats.each do |chat|%>
+    <% if user_signed_in? %>
+      <% if chat.user_id == current_user.id %>
+        <div class="mycomment">
+          <p><%= chat.content %></p>
+        </div>
+      <% else %>
+        <div class="fukidasi">
+          <div class="chatting">
+            <div class="says">
+              <p><%= chat.content %></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    <%end %>
+    <% if conservation_group_signed_in? %>
+      <% if chat.conservation_group_id == current_conservation_group.id %>
+        <div class="mycomment">
+          <p><%= chat.content %></p>
+        </div>
+      <%else %>
+        <div class="fukidasi">
+          <div class="chatting">
+            <div class="says">
+              <p><%= chat.content %></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    <%end %>
+  <%end%>
+</div>
