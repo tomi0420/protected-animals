@@ -1,0 +1,27 @@
+<%= render "shared/header" %>
+
+<div class="my_page">
+  <ul class="user_info">
+    <li class="group-posts-index">
+      <%= link_to conservation_groups_path(id: @conservation_group.id), class: "posts-link" do %>
+        <div class="posts-image">
+          <%= image_tag("posts-dog-cat.jpeg") %>
+        </div>
+        <div class="posts-index">
+          <span>投稿一覧</span>
+        </div>
+      <% end %>
+    </li>
+    <li class="users-chat-rooms-index" >
+      <%= link_to "#", class: "rooms-link" do %>
+        <div class="chat-image">
+          <%= image_tag("room-dog-cat.jpeg") %>
+        </div>
+        <div class="chat-index">
+          <span>チャットルーム一覧</span>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+  <%= render partial: "right_bar" %>
+</div>

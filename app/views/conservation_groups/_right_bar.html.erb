@@ -1,0 +1,76 @@
+<ul class="right-bar" >
+  <div class="user-topic">ユーザー情報</div>
+  <li class="detail-info">
+    <h4 class="detail-heading">ニックネーム</h4>
+    <div class="detail-nickname">
+      <%= @conservation_group.nickname %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">姓</h4>
+    <div class="detail-last-name">
+      <%= @conservation_group.last_name %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">名</h4>
+    <div class="detail-first-name">
+      <%= @conservation_group.first_name %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">姓(カナ)</h4>
+    <div class="detail-last-name-kana">
+      <%= @conservation_group.last_name_kana %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">名(カナ)</h4>
+    <div class="detail-first-name-kana">
+      <%= @conservation_group.first_name_kana %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">団体名</h4>
+    <div class="detail-group-name">
+      <%= @conservation_group.group_name %>
+    </div>
+  </li>
+  <div class="user-address-topic">住所情報</div>
+  <li class="detail-info">
+    <h4 class="detail-heading">郵便番号</h4>
+    <div class="detail-postal-code">
+      〒<%= @conservation_group.conservation_group_address.postal_code %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">都道府県</h4>
+    <div class="detail-prefecture">
+      <%= @conservation_group.conservation_group_address.prefecture.name %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">市区町村</h4>
+    <div class="detail-municipality">
+      <%= @conservation_group.conservation_group_address.city %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">番地</h4>
+    <div class="detail-address">
+      <%= @conservation_group.conservation_group_address.address %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">建物名</h4>
+    <div class="detail-building">
+      <%= @conservation_group.conservation_group_address.building %>
+    </div>
+  </li>
+  <li class="detail-info">
+    <h4 class="detail-heading">電話番号</h4>
+    <div class="detail-phone-number">
+      <%= @conservation_group.conservation_group_address.phone_number %>
+    </div>
+  </li>
+</ul>

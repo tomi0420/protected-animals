@@ -1,0 +1,16 @@
+<div class="side-bar">
+  <div class="side-header">
+    <div class="header-name">
+      <%= link_to @user.nickname, user_path(@user.id) %>
+    </div>
+  </div>
+  <div class="chat-rooms">
+    <% @rooms.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <%= link_to room.conservation_group.nickname, room_path(room.id) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

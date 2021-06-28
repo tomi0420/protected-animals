@@ -1,6 +1,7 @@
 .user_registration,
 .user_session,
 .login_now,
+.my_page_link,
 .search-animal,
 .animal-post
  {
@@ -20,9 +21,9 @@
   list-style: none;
 }
 
-.side_bar > li:hover {
+/* .side_bar > li:hover {
   background-color: #dcdcdc;
-}
+} */
 
 .conservation_group_form li,
 .search-animal li

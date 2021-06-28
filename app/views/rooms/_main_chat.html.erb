@@ -1,0 +1,26 @@
+<div class="main-header">
+  <div class="header-title">
+    <% if user_signed_in? %>
+      <h2 style="text-align:center"><%="#{@room.conservation_group.nickname}さんとのチャット"%></h2>
+    <% elsif conservation_group_signed_in? %>
+      <h2 style="text-align:center"><%="#{@room.user.nickname}さんとのチャット"%></h2>
+    <% end %>
+  </div>
+</div>
+
+<div class="chat-main">
+  <%= render partial: "chats/index" %>
+</div>
+
+<div class="footer-form">
+  <%= form_with model: [@room, @chat], class: 'chat-form' do |f| %>
+    <div class="form-input">
+      <%= f.text_field   :content, class: 'form-message', autocomplete: 'off' %>
+      <label class="form-image">
+        <i class="far fa-image fa-3x"></i>
+        <%= f.file_field :image, class: 'hidden' %>
+      </label>
+    </div>
+    <%= f.submit '送信', id: 'btn', class: 'chat-form-submit' %>
+  <% end %>
+</div>

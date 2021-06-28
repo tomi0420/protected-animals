@@ -29,10 +29,18 @@
       <i class="fas fa-sign-out-alt"></i>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </li>
+    <li class="my_page_link">
+      <i class="fas fa-user"></i>
+      <%= link_to "マイページ", user_path(current_user.id) %>
+    </li>
   <% elsif conservation_group_signed_in? %>
     <li class="login_now">
       <i class="fas fa-sign-out-alt"></i>
       <%= link_to "ログアウト", destroy_conservation_group_session_path, method: :delete %>
+    </li>
+    <li class="my_page_link">
+      <i class="fas fa-user"></i>
+      <%= link_to "マイページ", conservation_group_path(current_conservation_group.id) %>
     </li>
     <li class="animal-post">
     <i class="fas fa-bone"></i>

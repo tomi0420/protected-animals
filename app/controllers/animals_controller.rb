@@ -3,7 +3,7 @@ class AnimalsController < ApplicationController
   before_action :search_animal, only: [:index, :complex_search]
 
   def index
-    @animals = Animal.order('created_at DESC')                   #保護団体を登録後、N＋１問題を解消
+    @animals = Animal.includes(:conservation_group, :tags, :likes).with_attached_images.order('created_at DESC')
   end
 
   def new
